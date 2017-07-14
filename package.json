@@ -1,0 +1,23 @@
+{
+  "name": "babel-plugin-console",
+  "version": "0.0.0",
+  "description": "Babel plugin with additional console helper functions",
+  "main": "dist/index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattphillips/babel-plugin-console.git"
+  },
+  "keywords": [
+    "babel",
+    "plugin",
+    "console",
+    "scope"
+  ],
+  "author": "Matt Phillips <matt@mattphillips> (http://mattphillips.io)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mattphillips/babel-plugin-console/issues"
+  },
+  "homepage": "https://github.com/mattphillips/babel-plugin-console#readme"
+}
