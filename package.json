@@ -3,7 +3,10 @@
   "version": "0.0.0",
   "description": "Babel plugin with additional console helper functions",
   "main": "dist/index.js",
-  "scripts": {},
+  "scripts": {
+    "precommit": "lint-staged",
+    "prettier": "prettier 'src/**/*.js' --write --single-quote=true --print-width=120"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mattphillips/babel-plugin-console.git"
@@ -19,5 +22,16 @@
   "bugs": {
     "url": "https://github.com/mattphillips/babel-plugin-console/issues"
   },
-  "homepage": "https://github.com/mattphillips/babel-plugin-console#readme"
+  "homepage": "https://github.com/mattphillips/babel-plugin-console#readme",
+  "devDependencies": {
+    "husky": "^0.14.3",
+    "lint-staged": "^4.0.2",
+    "prettier": "^1.5.3"
+  },
+  "lint-staged": {
+    "*.js": [
+      "yarn prettier",
+      "git add"
+    ]
+  }
 }
