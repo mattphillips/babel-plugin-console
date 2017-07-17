@@ -4,8 +4,12 @@
   "description": "Babel plugin with additional console helper functions",
   "main": "dist/index.js",
   "scripts": {
+    "build": "babel src -d dist --ignore *.test.js",
     "precommit": "lint-staged",
-    "prettier": "prettier 'src/**/*.js' --write --single-quote=true --print-width=120"
+    "prettier": "prettier 'src/**/*.js' --write --single-quote=true --print-width=120",
+    "test": "jest",
+    "test:coverage": "yarn test -- --coverage",
+    "test:watch": "yarn test -- --watch"
   },
   "repository": {
     "type": "git",
@@ -24,9 +28,32 @@
   },
   "homepage": "https://github.com/mattphillips/babel-plugin-console#readme",
   "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-jest": "^20.0.3",
+    "babel-plugin-tester": "^3.2.2",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "husky": "^0.14.3",
+    "jest": "^20.0.4",
     "lint-staged": "^4.0.2",
     "prettier": "^1.5.3"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/fixtures/"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    }
   },
   "lint-staged": {
     "*.js": [
