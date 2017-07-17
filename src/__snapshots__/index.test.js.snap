@@ -1,0 +1,355 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`5. Function Declaration > scope of: custom message, function signature, params, variable, return value and script 1`] = `
+"
+function add(a, b) {
+  const c = 10;
+  console.scope('Custom add function message');
+  return a + b + c;
+}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+function add(a, b) {
+  const c = 10;
+  console.log('Custom add function message');
+  console.groupCollapsed('(1:0) function add(a, b) {...}');
+  console.groupCollapsed('Parameters');
+  console.log('(1:13)', 'a:', a);
+  console.log('(1:16)', 'b:', b);
+  console.groupEnd('Parameters');
+  console.groupCollapsed('Variables');
+  console.log('(2:8)', 'c:', c);
+  console.groupEnd('Variables');
+  console.groupCollapsed('Return');
+  console.log('(4:9)', a + b + c);
+  console.groupEnd('Return');
+  console.groupCollapsed('Script');
+  console.log('(1:9)', 'add:', add);
+  console.groupEnd('Script');
+  console.groupEnd('(1:0) function add(a, b) {...}');
+
+  return a + b + c;
+}
+"
+`;
+
+exports[`6. Function Expression > const > scope of: custom message, function signature, params, variable, return value and script 1`] = `
+"
+const add = function(a, b) {
+  const c = 10;
+  console.scope('Custom add function message');
+  return a + b + c;
+}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const add = function (a, b) {
+  const c = 10;
+  console.log('Custom add function message');
+  console.groupCollapsed('(1:6) const add = function(a, b) => {...}');
+  console.groupCollapsed('Parameters');
+  console.log('(1:21)', 'a:', a);
+  console.log('(1:24)', 'b:', b);
+  console.groupEnd('Parameters');
+  console.groupCollapsed('Variables');
+  console.log('(2:8)', 'c:', c);
+  console.groupEnd('Variables');
+  console.groupCollapsed('Return');
+  console.log('(4:9)', a + b + c);
+  console.groupEnd('Return');
+  console.groupCollapsed('Script');
+  console.log('(1:6)', 'add:', add);
+  console.groupEnd('Script');
+  console.groupEnd('(1:6) const add = function(a, b) => {...}');
+
+  return a + b + c;
+};
+"
+`;
+
+exports[`7. Function Expression > let > scope of: custom message, function signature, params, variable, return value and script 1`] = `
+"
+let add = function(a, b) {
+  const c = 10;
+  console.scope('Custom add function message');
+  return a + b + c;
+}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+let add = function (a, b) {
+  const c = 10;
+  console.log('Custom add function message');
+  console.groupCollapsed('(1:4) let add = function(a, b) => {...}');
+  console.groupCollapsed('Parameters');
+  console.log('(1:19)', 'a:', a);
+  console.log('(1:22)', 'b:', b);
+  console.groupEnd('Parameters');
+  console.groupCollapsed('Variables');
+  console.log('(2:8)', 'c:', c);
+  console.groupEnd('Variables');
+  console.groupCollapsed('Return');
+  console.log('(4:9)', a + b + c);
+  console.groupEnd('Return');
+  console.groupCollapsed('Script');
+  console.log('(1:4)', 'add:', add);
+  console.groupEnd('Script');
+  console.groupEnd('(1:4) let add = function(a, b) => {...}');
+
+  return a + b + c;
+};
+"
+`;
+
+exports[`8. Arrow Function > const > scope of: custom message, function signature, params, variable, return value and script 1`] = `
+"
+const add = (a, b) => {
+  const c = 10;
+  console.scope('Custom add function message');
+  return a + b + c;
+}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const add = (a, b) => {
+  const c = 10;
+  console.log('Custom add function message');
+  console.groupCollapsed('(1:6) const add = (a, b) => {...}');
+  console.groupCollapsed('Parameters');
+  console.log('(1:13)', 'a:', a);
+  console.log('(1:16)', 'b:', b);
+  console.groupEnd('Parameters');
+  console.groupCollapsed('Variables');
+  console.log('(2:8)', 'c:', c);
+  console.groupEnd('Variables');
+  console.groupCollapsed('Return');
+  console.log('(4:9)', a + b + c);
+  console.groupEnd('Return');
+  console.groupCollapsed('Script');
+  console.log('(1:6)', 'add:', add);
+  console.groupEnd('Script');
+  console.groupEnd('(1:6) const add = (a, b) => {...}');
+
+  return a + b + c;
+};
+"
+`;
+
+exports[`9. Arrow Function > let > scope of: custom message, function signature, params, variable, return value and script 1`] = `
+"
+let add = (a, b) => {
+  const c = 10;
+  console.scope('Custom add function message');
+  return a + b + c;
+}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+let add = (a, b) => {
+  const c = 10;
+  console.log('Custom add function message');
+  console.groupCollapsed('(1:4) let add = (a, b) => {...}');
+  console.groupCollapsed('Parameters');
+  console.log('(1:11)', 'a:', a);
+  console.log('(1:14)', 'b:', b);
+  console.groupEnd('Parameters');
+  console.groupCollapsed('Variables');
+  console.log('(2:8)', 'c:', c);
+  console.groupEnd('Variables');
+  console.groupCollapsed('Return');
+  console.log('(4:9)', a + b + c);
+  console.groupEnd('Return');
+  console.groupCollapsed('Script');
+  console.log('(1:4)', 'add:', add);
+  console.groupEnd('Script');
+  console.groupEnd('(1:4) let add = (a, b) => {...}');
+
+  return a + b + c;
+};
+"
+`;
+
+exports[`10. Curried Arrow Function > scope of: custom message, function signature, params, variable, return value and script 1`] = `
+"
+const add = (a) => (b) => {
+  const c = 10;
+  console.scope('Custom add function message');
+  return a + b + c;
+}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const add = a => b => {
+  const c = 10;
+  console.log('Custom add function message');
+  console.groupCollapsed('(1:0) const add = (a) => (b) => {...}');
+  console.groupCollapsed('Parameters');
+  console.log('(1:13)', 'a:', a);
+  console.log('(1:20)', 'b:', b);
+  console.groupEnd('Parameters');
+  console.groupCollapsed('Variables');
+  console.log('(2:8)', 'c:', c);
+  console.groupEnd('Variables');
+  console.groupCollapsed('Return');
+  console.log('(4:9)', a + b + c);
+  console.groupEnd('Return');
+  console.groupCollapsed('Script');
+  console.log('(1:6)', 'add:', add);
+  console.groupEnd('Script');
+  console.groupEnd('(1:0) const add = (a) => (b) => {...}');
+
+  return a + b + c;
+};
+"
+`;
+
+exports[`11. Curried Function Declarion > scope of: custom message, function signature, params, variable, return value and script 1`] = `
+"
+function add(a) {
+  return (b) => {
+    const c = 10;
+    console.scope('Custom add function message');
+    return a + b + c;
+  }
+}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+function add(a) {
+  return b => {
+    const c = 10;
+    console.log('Custom add function message');
+    console.groupCollapsed('(1:0) const add = (a) => (b) => {...}');
+    console.groupCollapsed('Parameters');
+    console.log('(1:13)', 'a:', a);
+    console.log('(2:10)', 'b:', b);
+    console.groupEnd('Parameters');
+    console.groupCollapsed('Variables');
+    console.log('(3:10)', 'c:', c);
+    console.groupEnd('Variables');
+    console.groupCollapsed('Return');
+    console.log('(5:11)', a + b + c);
+    console.groupEnd('Return');
+    console.groupCollapsed('Script');
+    console.log('(1:9)', 'add:', add);
+    console.groupEnd('Script');
+    console.groupEnd('(1:0) const add = (a) => (b) => {...}');
+
+    return a + b + c;
+  };
+}
+"
+`;
+
+exports[`12. Curried Function Expression > scope of: custom message, function signature, params, variable, return value and script 1`] = `
+"
+const add = function (a) {
+  return function(b) {
+    const c = 10;
+    console.scope('Custom add function message');
+    return a + b + c;
+  }
+}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const add = function (a) {
+  return function (b) {
+    const c = 10;
+    console.log('Custom add function message');
+    console.groupCollapsed('(1:0) const add = (a) => (b) => {...}');
+    console.groupCollapsed('Parameters');
+    console.log('(1:22)', 'a:', a);
+    console.log('(2:18)', 'b:', b);
+    console.groupEnd('Parameters');
+    console.groupCollapsed('Variables');
+    console.log('(3:10)', 'c:', c);
+    console.groupEnd('Variables');
+    console.groupCollapsed('Return');
+    console.log('(5:11)', a + b + c);
+    console.groupEnd('Return');
+    console.groupCollapsed('Script');
+    console.log('(1:6)', 'add:', add);
+    console.groupEnd('Script');
+    console.groupEnd('(1:0) const add = (a) => (b) => {...}');
+
+    return a + b + c;
+  };
+};
+"
+`;
+
+exports[`13. Curried functions > scope of: custom message, function signature, params, variable, return value and script 1`] = `
+"
+const add = function (a) {
+  return function(b) {
+    return c => {
+      const d = 10;
+      console.scope('Custom add function message');
+      return a + b + c + d;
+    }
+  }
+}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const add = function (a) {
+  return function (b) {
+    return c => {
+      const d = 10;
+      console.log('Custom add function message');
+      console.groupCollapsed('(1:0) const add = (a) => (b) => (c) => {...}');
+      console.groupCollapsed('Parameters');
+      console.log('(1:22)', 'a:', a);
+      console.log('(2:18)', 'b:', b);
+      console.log('(3:11)', 'c:', c);
+      console.groupEnd('Parameters');
+      console.groupCollapsed('Variables');
+      console.log('(4:12)', 'd:', d);
+      console.groupEnd('Variables');
+      console.groupCollapsed('Return');
+      console.log('(6:13)', a + b + c + d);
+      console.groupEnd('Return');
+      console.groupCollapsed('Script');
+      console.log('(1:6)', 'add:', add);
+      console.groupEnd('Script');
+      console.groupEnd('(1:0) const add = (a) => (b) => (c) => {...}');
+
+      return a + b + c + d;
+    };
+  };
+};
+"
+`;
+
+exports[`14. Return statement should be void when no return found 1`] = `
+"
+const add = function (a, b) {
+  console.scope('Custom add function message');
+  a + b;
+}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const add = function (a, b) {
+  console.log('Custom add function message');
+  console.groupCollapsed('(1:6) const add = function(a, b) => {...}');
+  console.groupCollapsed('Parameters');
+  console.log('(1:22)', 'a:', a);
+  console.log('(1:25)', 'b:', b);
+  console.groupEnd('Parameters');
+  console.groupCollapsed('Variables');
+  console.groupEnd('Variables');
+  console.groupCollapsed('Return');
+  console.log('Void');
+  console.groupEnd('Return');
+  console.groupCollapsed('Script');
+  console.log('(1:6)', 'add:', add);
+  console.groupEnd('Script');
+  console.groupEnd('(1:6) const add = function(a, b) => {...}');
+
+  a + b;
+};
+"
+`;

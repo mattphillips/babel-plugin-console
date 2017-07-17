@@ -34,6 +34,7 @@
     "babel-eslint": "^7.2.3",
     "babel-jest": "^20.0.3",
     "babel-plugin-tester": "^3.2.2",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "eslint": "^4.2.0",
     "eslint-plugin-import": "^2.7.0",
