@@ -5,6 +5,8 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "babel src -d dist --ignore *.test.js",
+    "lint": "eslint src",
+    "lint:fix": "yarn lint -- --fix",
     "precommit": "lint-staged",
     "prettier": "prettier 'src/**/*.js' --write --single-quote=true --print-width=120",
     "test": "jest",
@@ -29,9 +31,14 @@
   "homepage": "https://github.com/mattphillips/babel-plugin-console#readme",
   "devDependencies": {
     "babel-cli": "^6.24.1",
+    "babel-eslint": "^7.2.3",
     "babel-jest": "^20.0.3",
     "babel-plugin-tester": "^3.2.2",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "eslint": "^4.2.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jest": "^20.0.3",
+    "eslint-plugin-wyze": "^3.3.1",
     "husky": "^0.14.3",
     "jest": "^20.0.4",
     "lint-staged": "^4.0.2",
