@@ -171,6 +171,24 @@ pluginTester({
         return a + b;
       }
       `
+    },
+    'Export default Function  > scope of: custom message, function signature, params, variable, return value and script': {
+      snapshot: true,
+      code: `
+      export default function(state = 0, action) {
+        console.scope('Add one reducer');
+        return state + 1;
+      }
+      `
+    },
+    'Export default Curried Function  > scope of: custom message, function signature, params, variable, return value and script': {
+      snapshot: true,
+      code: `
+      export default addOne => (state = 0, action) => {
+        console.scope('Add one reducer');
+        return addOne(state);
+      }
+      `
     }
   }
 });

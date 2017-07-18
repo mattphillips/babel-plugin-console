@@ -104,9 +104,12 @@ const consolePlugin = babel => {
     // TOOD: do not flattern params then you can check if a function has been curried
     let parameterIdentifiers = [...getParamIdentifiers(parentFunction.scope.bindings)];
     let args = [getParamIdentifiers(parentFunction.scope.bindings)];
-
     while (isNotRootFunction(rootFunction)) {
-      rootFunction = findParentFunction(rootFunction);
+      const maybeParent = findParentFunction(rootFunction);
+      if (!maybeParent) {
+        break;
+      }
+      rootFunction = maybeParent;
       variableIdentifiers.unshift(...getVariableIdentifiers(rootFunction.scope.bindings));
       parameterIdentifiers.unshift(...getParamIdentifiers(rootFunction.scope.bindings));
       args.unshift(getParamIdentifiers(rootFunction.scope.bindings));
@@ -139,6 +142,12 @@ const consolePlugin = babel => {
       return buildFunctionDeclarationSignature(line, column, name, params);
     }
 
+    if (t.isExportDefaultDeclaration(rootFunction.parent)) {
+      const { node: declaration } = rootFunction.findParent(par => t.isExportDefaultDeclaration(par));
+      const { column, line } = declaration.loc.start;
+      return buildDefaultExportSignature(line, column, params);
+    }
+
     const name = rootFunction.parent.id.name;
     const { column, line } = rootFunction.parent.loc.start;
     const kind = rootFunction.findParent(par => t.isVariableDeclaration(par)).node.kind;
@@ -152,6 +161,10 @@ const consolePlugin = babel => {
 
   function buildFunctionDeclarationSignature(line, column, name, params) {
     return `(${line}:${column}) function ${name}(${params}) {...}`;
+  }
+
+  function buildDefaultExportSignature(line, column, params) {
+    return `(${line}:${column}) export default function (${params}) {...}`;
   }
   function buildFunctionExpressionSignature(line, column, kind, name, params) {
     return `(${line}:${column}) ${kind} ${name} = function(${params}) => {...}`;
@@ -168,6 +181,13 @@ const consolePlugin = babel => {
       const params = buildCurriedParameters(parameters);
 
       return buildCurriedSignature(line, column, kind, name, params);
+    }
+
+    if (t.isExportDefaultDeclaration(rootFunction.parent)) {
+      const { node: declaration } = rootFunction.findParent(par => t.isExportDefaultDeclaration(par));
+      const { column, line } = declaration.loc.start;
+      const params = buildCurriedParameters(parameters);
+      return buildCurriedDefaultExportSignature(line, column, params);
     }
 
     const { node: declaration } = rootFunction.findParent(par => t.isVariableDeclaration(par));
@@ -189,6 +209,10 @@ const consolePlugin = babel => {
 
   function buildCurriedSignature(line, column, kind, name, params) {
     return `(${line}:${column}) ${kind} ${name} = ${params} => {...}`;
+  }
+
+  function buildCurriedDefaultExportSignature(line, column, params) {
+    return `(${line}:${column}) export default = ${params} => {...}`;
   }
 };
 

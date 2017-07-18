@@ -394,3 +394,64 @@ function add(a, b) {
 }
 "
 `;
+
+exports[`16. Export default Function  > scope of: custom message, function signature, params, variable, return value and script 1`] = `
+"
+export default function(state = 0, action) {
+  console.scope('Add one reducer');
+  return state + 1;
+}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+export default function (state = 0, action) {
+  console.log('Add one reducer');
+  console.groupCollapsed('(1:0) export default function (state, action) {...}');
+  console.groupCollapsed('Parameters');
+  console.log('(1:24)', 'state:', state);
+  console.log('(1:35)', 'action:', action);
+  console.groupEnd('Parameters');
+  console.groupCollapsed('Variables');
+  console.groupEnd('Variables');
+  console.groupCollapsed('Return');
+  console.log('(3:9)', state + 1);
+  console.groupEnd('Return');
+  console.groupCollapsed('Script');
+  console.groupEnd('Script');
+  console.groupEnd('(1:0) export default function (state, action) {...}');
+
+  return state + 1;
+}
+"
+`;
+
+exports[`17. Export default Curried Function  > scope of: custom message, function signature, params, variable, return value and script 1`] = `
+"
+export default addOne => (state = 0, action) => {
+  console.scope('Add one reducer');
+  return addOne(state);
+}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+export default (addOne => (state = 0, action) => {
+  console.log('Add one reducer');
+  console.groupCollapsed('(1:0) export default = (addOne) => (state, action) => {...}');
+  console.groupCollapsed('Parameters');
+  console.log('(1:15)', 'addOne:', addOne);
+  console.log('(1:26)', 'state:', state);
+  console.log('(1:37)', 'action:', action);
+  console.groupEnd('Parameters');
+  console.groupCollapsed('Variables');
+  console.groupEnd('Variables');
+  console.groupCollapsed('Return');
+  console.log('(3:9)', addOne(state));
+  console.groupEnd('Return');
+  console.groupCollapsed('Script');
+  console.groupEnd('Script');
+  console.groupEnd('(1:0) export default = (addOne) => (state, action) => {...}');
+
+  return addOne(state);
+});
+"
+`;
