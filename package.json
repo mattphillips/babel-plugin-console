@@ -11,6 +11,7 @@
     "prettier": "prettier 'src/**/*.js' --write --single-quote=true --print-width=120",
     "test": "jest",
     "test:coverage": "yarn test -- --coverage",
+    "test:report": "codecov",
     "test:watch": "yarn test -- --watch"
   },
   "repository": {
@@ -20,6 +21,7 @@
   "keywords": [
     "babel",
     "plugin",
+    "babel-plugin",
     "console",
     "scope"
   ],
@@ -36,6 +38,7 @@
     "babel-plugin-tester": "^3.2.2",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "codecov": "^2.2.0",
     "eslint": "^4.2.0",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jest": "^20.0.3",
