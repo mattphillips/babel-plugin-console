@@ -455,3 +455,33 @@ export default (addOne => (state = 0, action) => {
 });
 "
 `;
+
+exports[`18. Spread arguments 1`] = `
+"
+const sum = (...xs) => {
+  console.scope('Sum args');
+  return xs.reduce((acc, x) => acc + x, 0);
+}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const sum = (...xs) => {
+  console.log('Sum args');
+  console.groupCollapsed('(1:6) const sum = (xs) => {...}');
+  console.groupCollapsed('Parameters');
+  console.log('(1:16)', 'xs:', xs);
+  console.groupEnd('Parameters');
+  console.groupCollapsed('Variables');
+  console.groupEnd('Variables');
+  console.groupCollapsed('Return');
+  console.log('(3:9)', xs.reduce((acc, x) => acc + x, 0));
+  console.groupEnd('Return');
+  console.groupCollapsed('Script');
+  console.log('(1:6)', 'sum:', sum);
+  console.groupEnd('Script');
+  console.groupEnd('(1:6) const sum = (xs) => {...}');
+
+  return xs.reduce((acc, x) => acc + x, 0);
+};
+"
+`;

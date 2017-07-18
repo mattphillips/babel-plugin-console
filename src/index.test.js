@@ -1,17 +1,5 @@
-import path from 'path';
 import pluginTester from 'babel-plugin-tester';
 import plugin from './';
-
-const projectRoot = path.join(__dirname, '../../');
-
-// expect.addSnapshotSerializer({
-//   print(val) {
-//     return val.split(projectRoot).join('<PROJECT_ROOT>/')
-//   },
-//   test(val) {
-//     return typeof val === 'string'
-//   },
-// })
 
 pluginTester({
   plugin,
@@ -189,10 +177,47 @@ pluginTester({
         return addOne(state);
       }
       `
+    },
+    'Spread arguments': {
+      snapshot: true,
+      code: `
+      const sum = (...xs) => {
+        console.scope('Sum args');
+        return xs.reduce((acc, x) => acc + x, 0);
+      }
+      `
+    },
+    'Multiple return statements': {
+      snapshot: true,
+      skip: true,
+      code: `
+      const greater = (a, b) => {
+        if(a > 1) {
+          console.scope('greater than');
+          return a;
+        }
+
+        return b;
+      }
+      `
+    },
+    'Switch case return': {
+      snapshot: true,
+      skip: true,
+      code: `
+      export default (state = 0, action) => {
+        switch(action.type) {
+          case 'ADD': {
+            console.scope('Add reducer');
+            return add(state, 1);
+          }
+
+          default: {
+            return 0;
+          }
+        }
+      }
+      `
     }
   }
 });
-
-// function fixture(filename) {
-//   return require.resolve(`./fixtures/${filename}`)
-// }
