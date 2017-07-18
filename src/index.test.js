@@ -4,6 +4,13 @@ import plugin from './';
 pluginTester({
   plugin,
   tests: {
+    'Called outside of a function > remove console scope call': {
+      snapshot: true,
+      code: `
+        const c = 10;
+        console.scope('should be removed');
+      `
+    },
     'Function Declaration > does not change when custom console scope is not present': {
       code: `
       function add(a, b) {

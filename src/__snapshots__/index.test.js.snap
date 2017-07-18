@@ -1,6 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`5. Function Declaration > scope of: custom message, function signature, params, variable, return value and script 1`] = `
+exports[`1. Called outside of a function > remove console scope call 1`] = `
+"
+const c = 10;
+console.scope('should be removed');
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const c = 10;
+"
+`;
+
+exports[`6. Function Declaration > scope of: custom message, function signature, params, variable, return value and script 1`] = `
 "
 function add(a, b) {
   const c = 10;
@@ -34,7 +45,7 @@ function add(a, b) {
 "
 `;
 
-exports[`6. Function Expression > const > scope of: custom message, function signature, params, variable, return value and script 1`] = `
+exports[`7. Function Expression > const > scope of: custom message, function signature, params, variable, return value and script 1`] = `
 "
 const add = function(a, b) {
   const c = 10;
@@ -68,7 +79,7 @@ const add = function (a, b) {
 "
 `;
 
-exports[`7. Function Expression > let > scope of: custom message, function signature, params, variable, return value and script 1`] = `
+exports[`8. Function Expression > let > scope of: custom message, function signature, params, variable, return value and script 1`] = `
 "
 let add = function(a, b) {
   const c = 10;
@@ -102,7 +113,7 @@ let add = function (a, b) {
 "
 `;
 
-exports[`8. Arrow Function > const > scope of: custom message, function signature, params, variable, return value and script 1`] = `
+exports[`9. Arrow Function > const > scope of: custom message, function signature, params, variable, return value and script 1`] = `
 "
 const add = (a, b) => {
   const c = 10;
@@ -136,7 +147,7 @@ const add = (a, b) => {
 "
 `;
 
-exports[`9. Arrow Function > let > scope of: custom message, function signature, params, variable, return value and script 1`] = `
+exports[`10. Arrow Function > let > scope of: custom message, function signature, params, variable, return value and script 1`] = `
 "
 let add = (a, b) => {
   const c = 10;
@@ -170,7 +181,7 @@ let add = (a, b) => {
 "
 `;
 
-exports[`10. Curried Arrow Function > scope of: custom message, function signature, params, variable, return value and script 1`] = `
+exports[`11. Curried Arrow Function > scope of: custom message, function signature, params, variable, return value and script 1`] = `
 "
 const add = (a) => (b) => {
   const c = 10;
@@ -204,7 +215,7 @@ const add = a => b => {
 "
 `;
 
-exports[`11. Curried Function Declarion > scope of: custom message, function signature, params, variable, return value and script 1`] = `
+exports[`12. Curried Function Declarion > scope of: custom message, function signature, params, variable, return value and script 1`] = `
 "
 function add(a) {
   return (b) => {
@@ -242,7 +253,7 @@ function add(a) {
 "
 `;
 
-exports[`12. Curried Function Expression > scope of: custom message, function signature, params, variable, return value and script 1`] = `
+exports[`13. Curried Function Expression > scope of: custom message, function signature, params, variable, return value and script 1`] = `
 "
 const add = function (a) {
   return function(b) {
@@ -280,7 +291,7 @@ const add = function (a) {
 "
 `;
 
-exports[`13. Curried functions > scope of: custom message, function signature, params, variable, return value and script 1`] = `
+exports[`14. Curried functions > scope of: custom message, function signature, params, variable, return value and script 1`] = `
 "
 const add = function (a) {
   return function(b) {
@@ -323,7 +334,7 @@ const add = function (a) {
 "
 `;
 
-exports[`14. Return statement should be void when no return found 1`] = `
+exports[`15. Return statement should be void when no return found 1`] = `
 "
 const add = function (a, b) {
   console.scope('Custom add function message');
@@ -354,7 +365,7 @@ const add = function (a, b) {
 "
 `;
 
-exports[`15. Finds script scope 1`] = `
+exports[`16. Finds script scope 1`] = `
 "
 const hello = 'hello';
 function divide(a, b) {
@@ -395,7 +406,7 @@ function add(a, b) {
 "
 `;
 
-exports[`16. Export default Function  > scope of: custom message, function signature, params, variable, return value and script 1`] = `
+exports[`17. Export default Function  > scope of: custom message, function signature, params, variable, return value and script 1`] = `
 "
 export default function(state = 0, action) {
   console.scope('Add one reducer');
@@ -425,7 +436,7 @@ export default function (state = 0, action) {
 "
 `;
 
-exports[`17. Export default Curried Function  > scope of: custom message, function signature, params, variable, return value and script 1`] = `
+exports[`18. Export default Curried Function  > scope of: custom message, function signature, params, variable, return value and script 1`] = `
 "
 export default addOne => (state = 0, action) => {
   console.scope('Add one reducer');
@@ -456,7 +467,7 @@ export default (addOne => (state = 0, action) => {
 "
 `;
 
-exports[`18. Spread arguments 1`] = `
+exports[`19. Spread arguments 1`] = `
 "
 const sum = (...xs) => {
   console.scope('Sum args');

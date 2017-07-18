@@ -44,14 +44,13 @@ const consolePlugin = babel => {
         if (!isConsoleScope) {
           return;
         }
+        const scope = traverseFunctions(path);
 
-        const {
-          parameterIdentifiers,
-          parentScope: ps,
-          returnStatement,
-          signature,
-          variableIdentifiers
-        } = traverseFunctions(path);
+        if (!scope) {
+          return path.remove();
+        }
+
+        const { parameterIdentifiers, parentScope, returnStatement, signature, variableIdentifiers } = scope;
 
         const parameters = parameterIdentifiers.map(mapIdentifer);
         const variables = variableIdentifiers.map(mapIdentifer);
@@ -63,7 +62,6 @@ const consolePlugin = babel => {
             )
           : buildLog(t.stringLiteral('Void'));
 
-        const parentScope = ps;
         const scriptScope = Object.keys(parentScope).map(key => {
           const { identifier } = parentScope[key];
           const { loc: { start: { column, line } }, name } = identifier;
@@ -93,7 +91,6 @@ const consolePlugin = babel => {
 
   function traverseFunctions(path) {
     const parentFunction = findParentFunction(path);
-
     if (!parentFunction) {
       return null;
     }
