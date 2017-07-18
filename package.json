@@ -4,6 +4,8 @@
   "description": "Babel plugin with additional console helper functions",
   "main": "dist/index.js",
   "scripts": {
+    "contributor": "all-contributors add",
+    "contributor:gen": "all-contributors generate",
     "build": "babel src -d dist --ignore *.test.js",
     "lint": "eslint src",
     "lint:fix": "yarn lint -- --fix",
@@ -32,6 +34,7 @@
   },
   "homepage": "https://github.com/mattphillips/babel-plugin-console#readme",
   "devDependencies": {
+    "all-contributors-cli": "^4.3.0",
     "babel-cli": "^6.24.1",
     "babel-eslint": "^7.2.3",
     "babel-jest": "^20.0.3",
