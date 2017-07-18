@@ -353,3 +353,44 @@ const add = function (a, b) {
 };
 "
 `;
+
+exports[`15. Finds script scope 1`] = `
+"
+const hello = 'hello';
+function divide(a, b) {
+  return a / b;
+}
+function add(a, b) {
+  console.scope('Custom add function message');
+  return a + b;
+}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const hello = 'hello';
+function divide(a, b) {
+  return a / b;
+}
+function add(a, b) {
+  console.log('Custom add function message');
+  console.groupCollapsed('(5:0) function add(a, b) {...}');
+  console.groupCollapsed('Parameters');
+  console.log('(5:13)', 'a:', a);
+  console.log('(5:16)', 'b:', b);
+  console.groupEnd('Parameters');
+  console.groupCollapsed('Variables');
+  console.groupEnd('Variables');
+  console.groupCollapsed('Return');
+  console.log('(7:9)', a + b);
+  console.groupEnd('Return');
+  console.groupCollapsed('Script');
+  console.log('(1:6)', 'hello:', hello);
+  console.log('(2:9)', 'divide:', divide);
+  console.log('(5:9)', 'add:', add);
+  console.groupEnd('Script');
+  console.groupEnd('(5:0) function add(a, b) {...}');
+
+  return a + b;
+}
+"
+`;

@@ -158,6 +158,19 @@ pluginTester({
         a + b;
       }
       `
+    },
+    'Finds script scope': {
+      snapshot: true,
+      code: `
+      const hello = 'hello';
+      function divide(a, b) {
+        return a / b;
+      }
+      function add(a, b) {
+        console.scope('Custom add function message');
+        return a + b;
+      }
+      `
     }
   }
 });
