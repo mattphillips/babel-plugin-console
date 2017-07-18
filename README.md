@@ -133,6 +133,12 @@ const add = (a, b) => {
 
 ![Invoking add100](assets/add100-dark.gif)
 
+## Inspiration
+
+[This tweet](https://twitter.com/kentcdodds/status/885604009930768384) led to me watching
+[@kentcdodds's](https://github.com/kentcdodds/) live presentation on ASTs. This plugin is an extension on the
+`captains-log` demoed - Thanks Kent!
+
 ## LICENSE
 
 MIT
