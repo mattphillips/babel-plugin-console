@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "description": "Babel plugin with additional console helper functions",
   "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "contributor": "all-contributors add",
     "contributor:gen": "all-contributors generate",
