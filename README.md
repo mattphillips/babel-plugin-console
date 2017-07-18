@@ -25,7 +25,8 @@ And then put too many variables into the log and lose context of which value is 
 ## Solution
 
 These problems can be solved by a computer at build time to inspect a functions parameters, variables, return value and
-parent scope and add meaningful logs around the scope of the function.
+parent scope and add meaningful logs around the scope of the function. This solution is similar to adding breakpoints
+and diving into a debugger.
 
 ## Installation
 
@@ -131,7 +132,11 @@ const add = (a, b) => {
 
 **The generated scope logs for the above function will look like this in a browser:**
 
-![Invoking add100](assets/add100-dark.gif)
+![Console scoping add100](assets/add100-dark.gif)
+
+It would like the following if you used a debugger with a breakpoint:
+
+![Debugging add100](assets/debugger.png)
 
 ## Inspiration
 
