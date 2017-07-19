@@ -24,9 +24,7 @@ And then put too many variables into the log and lose context of which value is 
 
 ## Solution
 
-These problems can be solved by a computer at build time to inspect a functions parameters, variables, return value and
-parent scope and add meaningful logs around the scope of the function. This solution is similar to adding breakpoints
-and diving into a debugger.
+These problems can be solved by a computer at build time. This plugin allows you to inspect a functions parameters, variables, return value and parent scope by adding meaningful logs around the scope of the function - removing the hassle of manual `console.log` statements or debugging.
 
 ## Installation
 
@@ -70,6 +68,8 @@ require('babel-core').transform('code', {
 
 Outputs a collection of messages for a functions entire scope
 
+*Note: this API is the same as the standard `console.log`*
+
 #### Syntax
 
 ```js
@@ -102,47 +102,25 @@ const add = (a, b) => {
 };
 
       ↓ ↓ ↓ ↓ ↓ ↓
-
-const add100 = a => {
-  const oneHundred = 100;
-  console.log('Add 100 to another number');
-  console.groupCollapsed('(1:6) const add100 = (a) => {...}');
-  console.groupCollapsed('Parameters');
-  console.log('(1:16)', 'a:', a);
-  console.groupEnd('Parameters');
-  console.groupCollapsed('Variables');
-  console.log('(2:8)', 'oneHundred:', oneHundred);
-  console.groupEnd('Variables');
-  console.groupCollapsed('Return');
-  console.log('(4:9)', add(a, oneHundred));
-  console.groupEnd('Return');
-  console.groupCollapsed('Script');
-  console.log('(1:6)', 'add100:', add100);
-  console.log('(7:6)', 'add:', add);
-  console.groupEnd('Script');
-  console.groupEnd('(1:6) const add100 = (a) => {...}');
-
-  return add(a, oneHundred);
-};
-
-const add = (a, b) => {
-  return a + b;
-};
 ```
 
-**The generated scope logs for the above function will look like this in a browser:**
+**Browser:**
 
 ![Console scoping add100](assets/add100-dark.gif)
-
-It would like the following if you used a debugger with a breakpoint:
-
-![Debugging add100](assets/debugger.png)
 
 ## Inspiration
 
 [This tweet](https://twitter.com/kentcdodds/status/885604009930768384) led to me watching
 [@kentcdodds's](https://github.com/kentcdodds/) live presentation on ASTs. This plugin is an extension on the
 `captains-log` demoed - Thanks Kent!
+
+## Other Solutions
+
+You could use a debugger with breakpoints to pause the execution of a function and inspect the values of each variable.
+
+The above `add100` function would like the following if you used a debugger with a breakpoint:
+
+![Debugging add100](assets/debugger.png)
 
 ## Contributors
 
