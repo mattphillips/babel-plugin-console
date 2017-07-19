@@ -1,0 +1,695 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`1. macros 1`] = `
+"
+import scope from './scope.macro'
+const c = 10;
+scope('should be removed');
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const c = 10;
+"
+`;
+
+exports[`2. macros 1`] = `
+"
+import scope from './scope.macro'
+function add(a, b) {
+  const c = 10;
+  console.log('Custom add function message');
+  return a + b + c;
+}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+function add(a, b) {
+  const c = 10;
+  console.log('Custom add function message');
+  return a + b + c;
+}
+"
+`;
+
+exports[`3. macros 1`] = `
+"
+import scope from './scope.macro'
+const add = function (a, b) {
+  const c = 10;
+  console.log('Custom add function message');
+  return a + b + c;
+};
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const add = function (a, b) {
+  const c = 10;
+  console.log('Custom add function message');
+  return a + b + c;
+};
+"
+`;
+
+exports[`4. macros 1`] = `
+"
+import scope from './scope.macro'
+const add = (a, b) => {
+  const c = 10;
+  console.log('Custom add function message');
+  return a + b + c;
+};
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const add = (a, b) => {
+  const c = 10;
+  console.log('Custom add function message');
+  return a + b + c;
+};
+"
+`;
+
+exports[`5. macros 1`] = `
+"
+import scope from './scope.macro'
+const add = a => b => {
+  const c = 10;
+  console.log('Custom add function message');
+  return a + b + c;
+};
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const add = a => b => {
+  const c = 10;
+  console.log('Custom add function message');
+  return a + b + c;
+};
+"
+`;
+
+exports[`6. macros 1`] = `
+"
+import scope from './scope.macro'
+function add(a, b) {
+  const c = 10;
+  scope('Custom add function message');
+  return a + b + c;
+}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+function add(a, b) {
+  const c = 10;
+  console.log('Custom add function message');
+  console.groupCollapsed('(2:0) function add(a, b) {...}');
+  console.groupCollapsed('Parameters');
+  console.log('(2:13)', 'a:', a);
+  console.log('(2:16)', 'b:', b);
+  console.groupEnd('Parameters');
+  console.groupCollapsed('Variables');
+  console.log('(3:8)', 'c:', c);
+  console.groupEnd('Variables');
+  console.groupCollapsed('Return');
+  console.log('(5:9)', a + b + c);
+  console.groupEnd('Return');
+  console.groupCollapsed('Script');
+  console.log('(1:7)', 'scope:', scope);
+  console.log('(2:9)', 'add:', add);
+  console.groupEnd('Script');
+  console.groupEnd('(2:0) function add(a, b) {...}');
+
+  return a + b + c;
+}
+"
+`;
+
+exports[`7. macros 1`] = `
+"
+import scope from './scope.macro';
+const add = function(a, b) {
+  const c = 10;
+  scope('Custom add function message');
+  return a + b + c;
+}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const add = function (a, b) {
+  const c = 10;
+  console.log('Custom add function message');
+  console.groupCollapsed('(2:6) const add = function(a, b) => {...}');
+  console.groupCollapsed('Parameters');
+  console.log('(2:21)', 'a:', a);
+  console.log('(2:24)', 'b:', b);
+  console.groupEnd('Parameters');
+  console.groupCollapsed('Variables');
+  console.log('(3:8)', 'c:', c);
+  console.groupEnd('Variables');
+  console.groupCollapsed('Return');
+  console.log('(5:9)', a + b + c);
+  console.groupEnd('Return');
+  console.groupCollapsed('Script');
+  console.log('(1:7)', 'scope:', scope);
+  console.log('(2:6)', 'add:', add);
+  console.groupEnd('Script');
+  console.groupEnd('(2:6) const add = function(a, b) => {...}');
+
+  return a + b + c;
+};
+"
+`;
+
+exports[`8. macros 1`] = `
+"
+import scope from './scope.macro';
+let add = function(a, b) {
+  const c = 10;
+  scope('Custom add function message');
+  return a + b + c;
+}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+let add = function (a, b) {
+  const c = 10;
+  console.log('Custom add function message');
+  console.groupCollapsed('(2:4) let add = function(a, b) => {...}');
+  console.groupCollapsed('Parameters');
+  console.log('(2:19)', 'a:', a);
+  console.log('(2:22)', 'b:', b);
+  console.groupEnd('Parameters');
+  console.groupCollapsed('Variables');
+  console.log('(3:8)', 'c:', c);
+  console.groupEnd('Variables');
+  console.groupCollapsed('Return');
+  console.log('(5:9)', a + b + c);
+  console.groupEnd('Return');
+  console.groupCollapsed('Script');
+  console.log('(1:7)', 'scope:', scope);
+  console.log('(2:4)', 'add:', add);
+  console.groupEnd('Script');
+  console.groupEnd('(2:4) let add = function(a, b) => {...}');
+
+  return a + b + c;
+};
+"
+`;
+
+exports[`9. macros 1`] = `
+"
+import scope from './scope.macro';
+const add = (a, b) => {
+  const c = 10;
+  scope('Custom add function message');
+  return a + b + c;
+}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const add = (a, b) => {
+  const c = 10;
+  console.log('Custom add function message');
+  console.groupCollapsed('(2:6) const add = (a, b) => {...}');
+  console.groupCollapsed('Parameters');
+  console.log('(2:13)', 'a:', a);
+  console.log('(2:16)', 'b:', b);
+  console.groupEnd('Parameters');
+  console.groupCollapsed('Variables');
+  console.log('(3:8)', 'c:', c);
+  console.groupEnd('Variables');
+  console.groupCollapsed('Return');
+  console.log('(5:9)', a + b + c);
+  console.groupEnd('Return');
+  console.groupCollapsed('Script');
+  console.log('(1:7)', 'scope:', scope);
+  console.log('(2:6)', 'add:', add);
+  console.groupEnd('Script');
+  console.groupEnd('(2:6) const add = (a, b) => {...}');
+
+  return a + b + c;
+};
+"
+`;
+
+exports[`10. macros 1`] = `
+"
+import scope from './scope.macro';
+let add = (a, b) => {
+  const c = 10;
+  scope('Custom add function message');
+  return a + b + c;
+}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+let add = (a, b) => {
+  const c = 10;
+  console.log('Custom add function message');
+  console.groupCollapsed('(2:4) let add = (a, b) => {...}');
+  console.groupCollapsed('Parameters');
+  console.log('(2:11)', 'a:', a);
+  console.log('(2:14)', 'b:', b);
+  console.groupEnd('Parameters');
+  console.groupCollapsed('Variables');
+  console.log('(3:8)', 'c:', c);
+  console.groupEnd('Variables');
+  console.groupCollapsed('Return');
+  console.log('(5:9)', a + b + c);
+  console.groupEnd('Return');
+  console.groupCollapsed('Script');
+  console.log('(1:7)', 'scope:', scope);
+  console.log('(2:4)', 'add:', add);
+  console.groupEnd('Script');
+  console.groupEnd('(2:4) let add = (a, b) => {...}');
+
+  return a + b + c;
+};
+"
+`;
+
+exports[`11. macros 1`] = `
+"
+import scope from './scope.macro';
+const add = (a) => (b) => {
+  const c = 10;
+  scope('Custom add function message');
+  return a + b + c;
+}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const add = a => b => {
+  const c = 10;
+  console.log('Custom add function message');
+  console.groupCollapsed('(2:0) const add = (a) => (b) => {...}');
+  console.groupCollapsed('Parameters');
+  console.log('(2:13)', 'a:', a);
+  console.log('(2:20)', 'b:', b);
+  console.groupEnd('Parameters');
+  console.groupCollapsed('Variables');
+  console.log('(3:8)', 'c:', c);
+  console.groupEnd('Variables');
+  console.groupCollapsed('Return');
+  console.log('(5:9)', a + b + c);
+  console.groupEnd('Return');
+  console.groupCollapsed('Script');
+  console.log('(1:7)', 'scope:', scope);
+  console.log('(2:6)', 'add:', add);
+  console.groupEnd('Script');
+  console.groupEnd('(2:0) const add = (a) => (b) => {...}');
+
+  return a + b + c;
+};
+"
+`;
+
+exports[`12. macros 1`] = `
+"
+import scope from './scope.macro';
+function add(a) {
+  return (b) => {
+    const c = 10;
+    scope('Custom add function message');
+    return a + b + c;
+  }
+}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+function add(a) {
+  return b => {
+    const c = 10;
+    console.log('Custom add function message');
+    console.groupCollapsed('(2:0) const add = (a) => (b) => {...}');
+    console.groupCollapsed('Parameters');
+    console.log('(2:13)', 'a:', a);
+    console.log('(3:10)', 'b:', b);
+    console.groupEnd('Parameters');
+    console.groupCollapsed('Variables');
+    console.log('(4:10)', 'c:', c);
+    console.groupEnd('Variables');
+    console.groupCollapsed('Return');
+    console.log('(6:11)', a + b + c);
+    console.groupEnd('Return');
+    console.groupCollapsed('Script');
+    console.log('(1:7)', 'scope:', scope);
+    console.log('(2:9)', 'add:', add);
+    console.groupEnd('Script');
+    console.groupEnd('(2:0) const add = (a) => (b) => {...}');
+
+    return a + b + c;
+  };
+}
+"
+`;
+
+exports[`13. macros 1`] = `
+"
+import scope from './scope.macro';
+const add = function (a) {
+  return function(b) {
+    const c = 10;
+    scope('Custom add function message');
+    return a + b + c;
+  }
+}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const add = function (a) {
+  return function (b) {
+    const c = 10;
+    console.log('Custom add function message');
+    console.groupCollapsed('(2:0) const add = (a) => (b) => {...}');
+    console.groupCollapsed('Parameters');
+    console.log('(2:22)', 'a:', a);
+    console.log('(3:18)', 'b:', b);
+    console.groupEnd('Parameters');
+    console.groupCollapsed('Variables');
+    console.log('(4:10)', 'c:', c);
+    console.groupEnd('Variables');
+    console.groupCollapsed('Return');
+    console.log('(6:11)', a + b + c);
+    console.groupEnd('Return');
+    console.groupCollapsed('Script');
+    console.log('(1:7)', 'scope:', scope);
+    console.log('(2:6)', 'add:', add);
+    console.groupEnd('Script');
+    console.groupEnd('(2:0) const add = (a) => (b) => {...}');
+
+    return a + b + c;
+  };
+};
+"
+`;
+
+exports[`14. macros 1`] = `
+"
+import scope from './scope.macro';
+const add = function (a) {
+  return function(b) {
+    return c => {
+      const d = 10;
+      scope('Custom add function message');
+      return a + b + c + d;
+    }
+  }
+}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const add = function (a) {
+  return function (b) {
+    return c => {
+      const d = 10;
+      console.log('Custom add function message');
+      console.groupCollapsed('(2:0) const add = (a) => (b) => (c) => {...}');
+      console.groupCollapsed('Parameters');
+      console.log('(2:22)', 'a:', a);
+      console.log('(3:18)', 'b:', b);
+      console.log('(4:11)', 'c:', c);
+      console.groupEnd('Parameters');
+      console.groupCollapsed('Variables');
+      console.log('(5:12)', 'd:', d);
+      console.groupEnd('Variables');
+      console.groupCollapsed('Return');
+      console.log('(7:13)', a + b + c + d);
+      console.groupEnd('Return');
+      console.groupCollapsed('Script');
+      console.log('(1:7)', 'scope:', scope);
+      console.log('(2:6)', 'add:', add);
+      console.groupEnd('Script');
+      console.groupEnd('(2:0) const add = (a) => (b) => (c) => {...}');
+
+      return a + b + c + d;
+    };
+  };
+};
+"
+`;
+
+exports[`15. macros 1`] = `
+"
+import scope from './scope.macro';
+const add = function (a, b) {
+  scope('Custom add function message');
+  a + b;
+}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const add = function (a, b) {
+  console.log('Custom add function message');
+  console.groupCollapsed('(2:6) const add = function(a, b) => {...}');
+  console.groupCollapsed('Parameters');
+  console.log('(2:22)', 'a:', a);
+  console.log('(2:25)', 'b:', b);
+  console.groupEnd('Parameters');
+  console.groupCollapsed('Variables');
+  console.groupEnd('Variables');
+  console.groupCollapsed('Return');
+  console.log('Void');
+  console.groupEnd('Return');
+  console.groupCollapsed('Script');
+  console.log('(1:7)', 'scope:', scope);
+  console.log('(2:6)', 'add:', add);
+  console.groupEnd('Script');
+  console.groupEnd('(2:6) const add = function(a, b) => {...}');
+
+  a + b;
+};
+"
+`;
+
+exports[`16. macros 1`] = `
+"
+import scope from './scope.macro';
+const hello = 'hello';
+function divide(a, b) {
+  return a / b;
+}
+function add(a, b) {
+  scope('Custom add function message');
+  return a + b;
+}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const hello = 'hello';
+function divide(a, b) {
+  return a / b;
+}
+function add(a, b) {
+  console.log('Custom add function message');
+  console.groupCollapsed('(6:0) function add(a, b) {...}');
+  console.groupCollapsed('Parameters');
+  console.log('(6:13)', 'a:', a);
+  console.log('(6:16)', 'b:', b);
+  console.groupEnd('Parameters');
+  console.groupCollapsed('Variables');
+  console.groupEnd('Variables');
+  console.groupCollapsed('Return');
+  console.log('(8:9)', a + b);
+  console.groupEnd('Return');
+  console.groupCollapsed('Script');
+  console.log('(1:7)', 'scope:', scope);
+  console.log('(2:6)', 'hello:', hello);
+  console.log('(3:9)', 'divide:', divide);
+  console.log('(6:9)', 'add:', add);
+  console.groupEnd('Script');
+  console.groupEnd('(6:0) function add(a, b) {...}');
+
+  return a + b;
+}
+"
+`;
+
+exports[`17. macros 1`] = `
+"
+import scope from './scope.macro';
+export default function(state = 0, action) {
+  scope('Add one reducer');
+  return state + 1;
+}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+export default function (state = 0, action) {
+  console.log('Add one reducer');
+  console.groupCollapsed('(2:0) export default function (state, action) {...}');
+  console.groupCollapsed('Parameters');
+  console.log('(2:24)', 'state:', state);
+  console.log('(2:35)', 'action:', action);
+  console.groupEnd('Parameters');
+  console.groupCollapsed('Variables');
+  console.groupEnd('Variables');
+  console.groupCollapsed('Return');
+  console.log('(4:9)', state + 1);
+  console.groupEnd('Return');
+  console.groupCollapsed('Script');
+  console.log('(1:7)', 'scope:', scope);
+  console.groupEnd('Script');
+  console.groupEnd('(2:0) export default function (state, action) {...}');
+
+  return state + 1;
+}
+"
+`;
+
+exports[`18. macros 1`] = `
+"
+import scope from './scope.macro';
+export default addOne => (state = 0, action) => {
+  scope('Add one reducer');
+  return addOne(state);
+}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+export default (addOne => (state = 0, action) => {
+  console.log('Add one reducer');
+  console.groupCollapsed('(2:0) export default = (addOne) => (state, action) => {...}');
+  console.groupCollapsed('Parameters');
+  console.log('(2:15)', 'addOne:', addOne);
+  console.log('(2:26)', 'state:', state);
+  console.log('(2:37)', 'action:', action);
+  console.groupEnd('Parameters');
+  console.groupCollapsed('Variables');
+  console.groupEnd('Variables');
+  console.groupCollapsed('Return');
+  console.log('(4:9)', addOne(state));
+  console.groupEnd('Return');
+  console.groupCollapsed('Script');
+  console.log('(1:7)', 'scope:', scope);
+  console.groupEnd('Script');
+  console.groupEnd('(2:0) export default = (addOne) => (state, action) => {...}');
+
+  return addOne(state);
+});
+"
+`;
+
+exports[`19. macros 1`] = `
+"
+import scope from './scope.macro';
+const sum = (...xs) => {
+  scope('Sum args');
+  return xs.reduce((acc, x) => acc + x, 0);
+}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const sum = (...xs) => {
+  console.log('Sum args');
+  console.groupCollapsed('(2:6) const sum = (xs) => {...}');
+  console.groupCollapsed('Parameters');
+  console.log('(2:16)', 'xs:', xs);
+  console.groupEnd('Parameters');
+  console.groupCollapsed('Variables');
+  console.groupEnd('Variables');
+  console.groupCollapsed('Return');
+  console.log('(4:9)', xs.reduce((acc, x) => acc + x, 0));
+  console.groupEnd('Return');
+  console.groupCollapsed('Script');
+  console.log('(1:7)', 'scope:', scope);
+  console.log('(2:6)', 'sum:', sum);
+  console.groupEnd('Script');
+  console.groupEnd('(2:6) const sum = (xs) => {...}');
+
+  return xs.reduce((acc, x) => acc + x, 0);
+};
+"
+`;
+
+exports[`20. macros 1`] = `
+"
+import scope from './scope.macro';
+const sum = (...xs) => {
+  scope('Sum args');
+  return xs.reduce((acc, x) => acc + x, 0);
+}
+
+const add = (a, b) => {
+  scope('Adding stuff up');
+  return a + b;
+}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const sum = (...xs) => {
+  console.log('Sum args');
+  console.groupCollapsed('(2:6) const sum = (xs) => {...}');
+  console.groupCollapsed('Parameters');
+  console.log('(2:16)', 'xs:', xs);
+  console.groupEnd('Parameters');
+  console.groupCollapsed('Variables');
+  console.groupEnd('Variables');
+  console.groupCollapsed('Return');
+  console.log('(4:9)', xs.reduce((acc, x) => acc + x, 0));
+  console.groupEnd('Return');
+  console.groupCollapsed('Script');
+  console.log('(1:7)', 'scope:', scope);
+  console.log('(2:6)', 'sum:', sum);
+  console.log('(7:6)', 'add:', add);
+  console.groupEnd('Script');
+  console.groupEnd('(2:6) const sum = (xs) => {...}');
+
+  return xs.reduce((acc, x) => acc + x, 0);
+};
+
+const add = (a, b) => {
+  console.log('Adding stuff up');
+  console.groupCollapsed('(7:6) const add = (a, b) => {...}');
+  console.groupCollapsed('Parameters');
+  console.log('(7:13)', 'a:', a);
+  console.log('(7:16)', 'b:', b);
+  console.groupEnd('Parameters');
+  console.groupCollapsed('Variables');
+  console.groupEnd('Variables');
+  console.groupCollapsed('Return');
+  console.log('(9:9)', a + b);
+  console.groupEnd('Return');
+  console.groupCollapsed('Script');
+  console.log('(1:7)', 'scope:', scope);
+  console.log('(2:6)', 'sum:', sum);
+  console.log('(7:6)', 'add:', add);
+  console.groupEnd('Script');
+  console.groupEnd('(7:6) const add = (a, b) => {...}');
+
+  return a + b;
+};
+"
+`;
+
+exports[`21. macros 1`] = `
+"
+import scope from './scope.macro';
+const getApi = async (url) => {
+  scope('Requesting some data');
+  return await fetch(url);
+}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const getApi = async url => {
+  console.log('Requesting some data');
+  console.groupCollapsed('(2:6) const getApi = (url) => {...}');
+  console.groupCollapsed('Parameters');
+  console.log('(2:22)', 'url:', url);
+  console.groupEnd('Parameters');
+  console.groupCollapsed('Variables');
+  console.groupEnd('Variables');
+  console.groupCollapsed('Return');
+  console.log('(4:9)', (await fetch(url)));
+  console.groupEnd('Return');
+  console.groupCollapsed('Script');
+  console.log('(1:7)', 'scope:', scope);
+  console.log('(2:6)', 'getApi:', getApi);
+  console.groupEnd('Script');
+  console.groupEnd('(2:6) const getApi = (url) => {...}');
+
+  return await fetch(url);
+};
+"
+`;

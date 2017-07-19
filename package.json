@@ -4,7 +4,8 @@
   "description": "Babel plugin with additional console helper functions",
   "main": "dist/index.js",
   "files": [
-    "dist"
+    "dist",
+    "scope.macro.js"
   ],
   "scripts": {
     "contributor": "all-contributors add",
@@ -41,6 +42,7 @@
     "babel-cli": "^6.24.1",
     "babel-eslint": "^7.2.3",
     "babel-jest": "^20.0.3",
+    "babel-macros": "^0.5.2",
     "babel-plugin-tester": "^3.2.2",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",

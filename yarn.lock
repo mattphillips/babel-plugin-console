@@ -301,6 +301,10 @@ babel-jest@^20.0.3:
     babel-plugin-istanbul "^4.0.0"
     babel-preset-jest "^20.0.3"
 
+babel-macros@^0.5.2:
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/babel-macros/-/babel-macros-0.5.2.tgz#8180d0764c5935f6c2ee0607c6a60a89719b0307"
+
 babel-messages@^6.23.0:
   version "6.23.0"
   resolved "https://registry.yarnpkg.com/babel-messages/-/babel-messages-6.23.0.tgz#f3cdf4703858035b2a2951c6ec5edf6c62f2630e"
