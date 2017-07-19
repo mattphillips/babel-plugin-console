@@ -194,16 +194,50 @@ pluginTester({
       }
       `
     },
+    'Multiple console scopes': {
+      snapshot: true,
+      code: `
+      const sum = (...xs) => {
+        console.scope('Sum args');
+        return xs.reduce((acc, x) => acc + x, 0);
+      }
+
+      const add = (a, b) => {
+        console.scope('Adding stuff up');
+        return a + b;
+      }
+      `
+    },
+    'Async functions': {
+      snapshot: true,
+      code: `
+      const getApi = async (url) => {
+        console.scope('Requesting some data');
+        return await fetch(url);
+      }
+      `
+    },
+    'module.exports function': {
+      skip: true,
+      snapshot: true,
+      code: `
+      module.exports = (a, b) => {
+        console.scope('Adding stuff up');
+        return a + b;
+      }
+      `
+    },
     'Multiple return statements': {
       snapshot: true,
       skip: true,
       code: `
       const greater = (a, b) => {
         if(a > 1) {
+          const c = 'c is for charlie';
           console.scope('greater than');
           return a;
         }
-
+        const d = 'd is for delta';
         return b;
       }
       `

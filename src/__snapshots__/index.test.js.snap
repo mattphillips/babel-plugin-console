@@ -496,3 +496,90 @@ const sum = (...xs) => {
 };
 "
 `;
+
+exports[`20. Multiple console scopes 1`] = `
+"
+const sum = (...xs) => {
+  console.scope('Sum args');
+  return xs.reduce((acc, x) => acc + x, 0);
+}
+
+const add = (a, b) => {
+  console.scope('Adding stuff up');
+  return a + b;
+}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const sum = (...xs) => {
+  console.log('Sum args');
+  console.groupCollapsed('(1:6) const sum = (xs) => {...}');
+  console.groupCollapsed('Parameters');
+  console.log('(1:16)', 'xs:', xs);
+  console.groupEnd('Parameters');
+  console.groupCollapsed('Variables');
+  console.groupEnd('Variables');
+  console.groupCollapsed('Return');
+  console.log('(3:9)', xs.reduce((acc, x) => acc + x, 0));
+  console.groupEnd('Return');
+  console.groupCollapsed('Script');
+  console.log('(1:6)', 'sum:', sum);
+  console.log('(6:6)', 'add:', add);
+  console.groupEnd('Script');
+  console.groupEnd('(1:6) const sum = (xs) => {...}');
+
+  return xs.reduce((acc, x) => acc + x, 0);
+};
+
+const add = (a, b) => {
+  console.log('Adding stuff up');
+  console.groupCollapsed('(6:6) const add = (a, b) => {...}');
+  console.groupCollapsed('Parameters');
+  console.log('(6:13)', 'a:', a);
+  console.log('(6:16)', 'b:', b);
+  console.groupEnd('Parameters');
+  console.groupCollapsed('Variables');
+  console.groupEnd('Variables');
+  console.groupCollapsed('Return');
+  console.log('(8:9)', a + b);
+  console.groupEnd('Return');
+  console.groupCollapsed('Script');
+  console.log('(1:6)', 'sum:', sum);
+  console.log('(6:6)', 'add:', add);
+  console.groupEnd('Script');
+  console.groupEnd('(6:6) const add = (a, b) => {...}');
+
+  return a + b;
+};
+"
+`;
+
+exports[`21. Async functions 1`] = `
+"
+const getApi = async (url) => {
+  console.scope('Requesting some data');
+  return await fetch(url);
+}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const getApi = async url => {
+  console.log('Requesting some data');
+  console.groupCollapsed('(1:6) const getApi = (url) => {...}');
+  console.groupCollapsed('Parameters');
+  console.log('(1:22)', 'url:', url);
+  console.groupEnd('Parameters');
+  console.groupCollapsed('Variables');
+  console.groupEnd('Variables');
+  console.groupCollapsed('Return');
+  console.log('(3:9)', (await fetch(url)));
+  console.groupEnd('Return');
+  console.groupCollapsed('Script');
+  console.log('(1:6)', 'getApi:', getApi);
+  console.groupEnd('Script');
+  console.groupEnd('(1:6) const getApi = (url) => {...}');
+
+  return await fetch(url);
+};
+"
+`;
