@@ -118,7 +118,7 @@ const add = (a, b) => {
 
 You could use a debugger with breakpoints to pause the execution of a function and inspect the values of each variable.
 
-The above `add100` function would like the following if you used a debugger with a breakpoint:
+The above `add100` function would look like the following if you used a debugger with a breakpoint:
 
 ![Debugging add100](assets/debugger.png)
 
