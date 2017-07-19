@@ -18,6 +18,15 @@
         "infra",
         "test"
       ]
+    },
+    {
+      "login": "stevebluck",
+      "name": "Stephen Bluck",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/611927?v=4",
+      "profile": "http://www.photobox.com",
+      "contributions": [
+        "doc"
+      ]
     }
   ]
 }
