@@ -36,7 +36,7 @@ function add(a, b) {
   console.log('(4:9)', a + b + c);
   console.groupEnd('Return');
   console.groupCollapsed('Script');
-  console.log('(1:9)', 'add:', add);
+  console.log('(1:9) function add(a, b) {...}');
   console.groupEnd('Script');
   console.groupEnd('(1:0) function add(a, b) {...}');
 
@@ -70,7 +70,7 @@ const add = function (a, b) {
   console.log('(4:9)', a + b + c);
   console.groupEnd('Return');
   console.groupCollapsed('Script');
-  console.log('(1:6)', 'add:', add);
+  console.log('(1:6) const add = function(a, b) => {...}');
   console.groupEnd('Script');
   console.groupEnd('(1:6) const add = function(a, b) => {...}');
 
@@ -104,7 +104,7 @@ let add = function (a, b) {
   console.log('(4:9)', a + b + c);
   console.groupEnd('Return');
   console.groupCollapsed('Script');
-  console.log('(1:4)', 'add:', add);
+  console.log('(1:4) let add = function(a, b) => {...}');
   console.groupEnd('Script');
   console.groupEnd('(1:4) let add = function(a, b) => {...}');
 
@@ -138,7 +138,7 @@ const add = (a, b) => {
   console.log('(4:9)', a + b + c);
   console.groupEnd('Return');
   console.groupCollapsed('Script');
-  console.log('(1:6)', 'add:', add);
+  console.log('(1:6) const add = (a, b) => {...}');
   console.groupEnd('Script');
   console.groupEnd('(1:6) const add = (a, b) => {...}');
 
@@ -172,7 +172,7 @@ let add = (a, b) => {
   console.log('(4:9)', a + b + c);
   console.groupEnd('Return');
   console.groupCollapsed('Script');
-  console.log('(1:4)', 'add:', add);
+  console.log('(1:4) let add = (a, b) => {...}');
   console.groupEnd('Script');
   console.groupEnd('(1:4) let add = (a, b) => {...}');
 
@@ -206,7 +206,7 @@ const add = a => b => {
   console.log('(4:9)', a + b + c);
   console.groupEnd('Return');
   console.groupCollapsed('Script');
-  console.log('(1:6)', 'add:', add);
+  console.log('(1:6) const add = (a) => {...}');
   console.groupEnd('Script');
   console.groupEnd('(1:0) const add = (a) => (b) => {...}');
 
@@ -243,7 +243,7 @@ function add(a) {
     console.log('(5:11)', a + b + c);
     console.groupEnd('Return');
     console.groupCollapsed('Script');
-    console.log('(1:9)', 'add:', add);
+    console.log('(1:9) function add(a) {...}');
     console.groupEnd('Script');
     console.groupEnd('(1:0) const add = (a) => (b) => {...}');
 
@@ -281,7 +281,7 @@ const add = function (a) {
     console.log('(5:11)', a + b + c);
     console.groupEnd('Return');
     console.groupCollapsed('Script');
-    console.log('(1:6)', 'add:', add);
+    console.log('(1:6) const add = function(a) => {...}');
     console.groupEnd('Script');
     console.groupEnd('(1:0) const add = (a) => (b) => {...}');
 
@@ -323,7 +323,7 @@ const add = function (a) {
       console.log('(6:13)', a + b + c + d);
       console.groupEnd('Return');
       console.groupCollapsed('Script');
-      console.log('(1:6)', 'add:', add);
+      console.log('(1:6) const add = function(a) => {...}');
       console.groupEnd('Script');
       console.groupEnd('(1:0) const add = (a) => (b) => (c) => {...}');
 
@@ -356,7 +356,7 @@ const add = function (a, b) {
   console.log('Void');
   console.groupEnd('Return');
   console.groupCollapsed('Script');
-  console.log('(1:6)', 'add:', add);
+  console.log('(1:6) const add = function(a, b) => {...}');
   console.groupEnd('Script');
   console.groupEnd('(1:6) const add = function(a, b) => {...}');
 
@@ -396,8 +396,8 @@ function add(a, b) {
   console.groupEnd('Return');
   console.groupCollapsed('Script');
   console.log('(1:6)', 'hello:', hello);
-  console.log('(2:9)', 'divide:', divide);
-  console.log('(5:9)', 'add:', add);
+  console.log('(2:9) function divide(a, b) {...}');
+  console.log('(5:9) function add(a, b) {...}');
   console.groupEnd('Script');
   console.groupEnd('(5:0) function add(a, b) {...}');
 
@@ -488,7 +488,7 @@ const sum = (...xs) => {
   console.log('(3:9)', xs.reduce((acc, x) => acc + x, 0));
   console.groupEnd('Return');
   console.groupCollapsed('Script');
-  console.log('(1:6)', 'sum:', sum);
+  console.log('(1:6) const sum = () => {...}');
   console.groupEnd('Script');
   console.groupEnd('(1:6) const sum = (xs) => {...}');
 
@@ -523,8 +523,8 @@ const sum = (...xs) => {
   console.log('(3:9)', xs.reduce((acc, x) => acc + x, 0));
   console.groupEnd('Return');
   console.groupCollapsed('Script');
-  console.log('(1:6)', 'sum:', sum);
-  console.log('(6:6)', 'add:', add);
+  console.log('(1:6) const sum = () => {...}');
+  console.log('(6:6) const add = (a, b) => {...}');
   console.groupEnd('Script');
   console.groupEnd('(1:6) const sum = (xs) => {...}');
 
@@ -544,8 +544,8 @@ const add = (a, b) => {
   console.log('(8:9)', a + b);
   console.groupEnd('Return');
   console.groupCollapsed('Script');
-  console.log('(1:6)', 'sum:', sum);
-  console.log('(6:6)', 'add:', add);
+  console.log('(1:6) const sum = () => {...}');
+  console.log('(6:6) const add = (a, b) => {...}');
   console.groupEnd('Script');
   console.groupEnd('(6:6) const add = (a, b) => {...}');
 
@@ -575,7 +575,7 @@ const getApi = async url => {
   console.log('(3:9)', (await fetch(url)));
   console.groupEnd('Return');
   console.groupCollapsed('Script');
-  console.log('(1:6)', 'getApi:', getApi);
+  console.log('(1:6) const getApi = (url) => {...}');
   console.groupEnd('Script');
   console.groupEnd('(1:6) const getApi = (url) => {...}');
 
@@ -610,7 +610,7 @@ const add = (a, b) => {
   console.log('(5:9)', a + b);
   console.groupEnd('Return');
   console.groupCollapsed('Script');
-  console.log('(3:6)', 'add:', add);
+  console.log('(3:6) const add = (a, b) => {...}');
   console.groupEnd('Script');
   console.groupEnd('(3:6) const add = (a, b) => {...}');
 
@@ -645,7 +645,7 @@ const add = (a, b) => {
   console.log('(5:9)', a + b);
   console.groupEnd('Return');
   console.groupCollapsed('Script');
-  console.log('(3:6)', 'add:', add);
+  console.log('(3:6) const add = (a, b) => {...}');
   console.groupEnd('Script');
   console.groupEnd('(3:6) const add = (a, b) => {...}');
 

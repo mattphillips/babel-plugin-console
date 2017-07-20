@@ -75,14 +75,14 @@ const getFunctionSignature = (types, parameters, rootFunction) => {
   return buildFunctionExpressionSignature(line, column, kind, name, params);
 };
 
-const buildFunctionDeclarationSignature = (line, column, name, params) =>
+export const buildFunctionDeclarationSignature = (line, column, name, params) =>
   `(${line}:${column}) function ${name}(${params}) {...}`;
 
 const buildDefaultExportSignature = (line, column, params) =>
   `(${line}:${column}) export default function (${params}) {...}`;
 
-const buildFunctionExpressionSignature = (line, column, kind, name, params) =>
+export const buildFunctionExpressionSignature = (line, column, kind, name, params) =>
   `(${line}:${column}) ${kind} ${name} = function(${params}) => {...}`;
 
-const buildArrowFunctionSignature = (line, column, kind, name, params) =>
+export const buildArrowFunctionSignature = (line, column, kind, name, params) =>
   `(${line}:${column}) ${kind} ${name} = (${params}) => {...}`;

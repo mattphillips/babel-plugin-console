@@ -2,7 +2,11 @@ import { flatten } from '../utils';
 import looksLike from '../utils/looks-like';
 
 import { getParamIdentifiers, getVariableIdentifiers } from './identifiers';
-import getSignature from './signatures';
+import getSignature, {
+  buildArrowFunctionSignature,
+  buildFunctionDeclarationSignature,
+  buildFunctionExpressionSignature
+} from './signatures';
 import templateBuilders from './templates';
 
 export default (path, template, t) => {
@@ -14,7 +18,7 @@ export default (path, template, t) => {
     return;
   }
 
-  const { parameterIdentifiers, parentScope, returnStatement, signature, variableIdentifiers } = scope;
+  const { bindings, parameterIdentifiers, returnStatement, signature, variableIdentifiers } = scope;
 
   const mapIdentifer = identifier => {
     const { loc: { start: { column, line } }, name } = identifier;
@@ -29,15 +33,51 @@ export default (path, template, t) => {
     }
     return buildLog(t.stringLiteral('Void'));
   };
-  const scriptScope = Object.keys(parentScope)
+
+  const joinParams = params => params.map(({ name }) => name).join(', ');
+
+  const scriptScope = Object.keys(bindings)
     .filter(key => {
-      const binding = parentScope[key];
+      const binding = bindings[key];
       const isRequire = looksLike(binding.path, { node: { init: { callee: { name: 'require' } } } });
       return binding.kind !== 'module' && !isRequire;
     })
     .map(key => {
-      const { identifier } = parentScope[key];
+      const binding = bindings[key];
+      const { identifier } = binding;
       const { loc: { start: { column, line } }, name } = identifier;
+
+      const isFunction = looksLike(binding, { path: t.isFunctionDeclaration });
+      const isArrow = looksLike(binding.path, { node: { init: t.isArrowFunctionExpression } });
+      const isFunctionExpression = looksLike(binding.path, { node: { init: t.isFunctionExpression } });
+
+      if (isArrow) {
+        const signature = buildArrowFunctionSignature(
+          line,
+          column,
+          binding.kind,
+          name,
+          joinParams(binding.path.node.init.params)
+        );
+        return buildLog(t.stringLiteral(signature));
+      }
+
+      if (isFunction) {
+        const signature = buildFunctionDeclarationSignature(line, column, name, joinParams(binding.path.node.params));
+        return buildLog(t.stringLiteral(signature));
+      }
+
+      if (isFunctionExpression) {
+        const signature = buildFunctionExpressionSignature(
+          line,
+          column,
+          binding.kind,
+          name,
+          joinParams(binding.path.node.init.params)
+        );
+        return buildLog(t.stringLiteral(signature));
+      }
+
       return buildLog(t.stringLiteral(`(${line}:${column})`), t.stringLiteral(`${name}:`), identifier);
     });
 
@@ -81,13 +121,13 @@ const traverseFunctions = (path, t) => {
     parameters.unshift(getParamIdentifiers(rootFunction.scope.bindings));
   }
 
-  const parentScope = rootFunction.scope.parent.bindings;
+  const { bindings } = rootFunction.scope.parent;
   const stmt = parentFunction.node.body.body.find(rest => t.isReturnStatement(rest));
   const returnStatement = stmt && stmt.argument;
 
   return {
+    bindings,
     parameterIdentifiers: flatten(parameters),
-    parentScope,
     returnStatement,
     signature: getSignature(t, parameters, rootFunction),
     variableIdentifiers: flatten(variables)
