@@ -16,6 +16,7 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 [![Roadmap](https://img.shields.io/badge/%F0%9F%93%94-roadmap-CD9523.svg?style=flat-square)](https://github.com/mattphillips/babel-plugin-console/blob/master/docs/ROADMAP.md)
 [![Examples](https://img.shields.io/badge/%F0%9F%92%A1-examples-8C8E93.svg?style=flat-square)](https://github.com/mattphillips/babel-plugin-console/blob/master/docs/EXAMPLES.md)
+[![Babel Macro](https://img.shields.io/badge/babel--macro-%F0%9F%8E%A3-f5da55.svg?style=flat-square)](https://github.com/kentcdodds/babel-macros)
 
 ## Problem
 
@@ -90,6 +91,8 @@ JavaScript objects with which to replace substitution strings within msg. This g
 
 ## Usage
 
+### Plugin
+
 ```js
 const add100 = (a) => {
   const oneHundred = 100;
@@ -107,6 +110,41 @@ const add = (a, b) => {
 **Browser:**
 
 ![Console scoping add100](assets/add100-dark.gif)
+
+### Macros
+
+`babel-plugin-console` also ships with [babel-macros](https://github.com/kentcdodds/babel-macros) supported 🎉
+
+To use a macro you will need to
+[install and setup](https://github.com/kentcdodds/babel-macros/blob/master/other/docs/user.md) `babel-macros`.
+
+Once you have enabled `babel-macros` import/require the `scope` macro with:
+
+```js
+import scope from 'babel-plugin-console/scope.macro';
+// OR
+const scope = require('babel-plugin-console/scope.macro');
+```
+
+#### Example
+
+*Note: this is the same as the above usage and will generate the same logs - only difference is it uses the scope
+macro* 😎
+
+```js
+      ↑ ↑ ↑ ↑ ↑ ↑
+import scope from 'babel-plugin-console/scope.macro';
+
+const add100 = (a) => {
+  const oneHundred = 100;
+  scope('Add 100 to another number');
+  return add(a, oneHundred);
+};
+
+const add = (a, b) => {
+  return a + b;
+};
+```
 
 ## Inspiration
 
