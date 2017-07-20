@@ -29,11 +29,17 @@ export default (path, template, t) => {
     }
     return buildLog(t.stringLiteral('Void'));
   };
-  const scriptScope = Object.keys(parentScope).map(key => {
-    const { identifier } = parentScope[key];
-    const { loc: { start: { column, line } }, name } = identifier;
-    return buildLog(t.stringLiteral(`(${line}:${column})`), t.stringLiteral(`${name}:`), identifier);
-  });
+  const scriptScope = Object.keys(parentScope)
+    .filter(key => {
+      const binding = parentScope[key];
+      const isRequire = looksLike(binding.path, { node: { init: { callee: { name: 'require' } } } });
+      return binding.kind !== 'module' && !isRequire;
+    })
+    .map(key => {
+      const { identifier } = parentScope[key];
+      const { loc: { start: { column, line } }, name } = identifier;
+      return buildLog(t.stringLiteral(`(${line}:${column})`), t.stringLiteral(`${name}:`), identifier);
+    });
 
   return [
     buildLog(...path.node.arguments),

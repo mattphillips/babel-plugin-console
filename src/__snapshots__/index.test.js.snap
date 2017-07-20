@@ -583,3 +583,73 @@ const getApi = async url => {
 };
 "
 `;
+
+exports[`22. Remove import statements from script scope 1`] = `
+"
+import x from 'x';
+
+const add = (a, b) => {
+  console.scope('Adding stuff up');
+  return a + b;
+}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+import x from 'x';
+
+const add = (a, b) => {
+  console.log('Adding stuff up');
+  console.groupCollapsed('(3:6) const add = (a, b) => {...}');
+  console.groupCollapsed('Parameters');
+  console.log('(3:13)', 'a:', a);
+  console.log('(3:16)', 'b:', b);
+  console.groupEnd('Parameters');
+  console.groupCollapsed('Variables');
+  console.groupEnd('Variables');
+  console.groupCollapsed('Return');
+  console.log('(5:9)', a + b);
+  console.groupEnd('Return');
+  console.groupCollapsed('Script');
+  console.log('(3:6)', 'add:', add);
+  console.groupEnd('Script');
+  console.groupEnd('(3:6) const add = (a, b) => {...}');
+
+  return a + b;
+};
+"
+`;
+
+exports[`23. Remove require statements from script scope 1`] = `
+"
+const x = require('x');
+
+const add = (a, b) => {
+  console.scope('Adding stuff up');
+  return a + b;
+}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const x = require('x');
+
+const add = (a, b) => {
+  console.log('Adding stuff up');
+  console.groupCollapsed('(3:6) const add = (a, b) => {...}');
+  console.groupCollapsed('Parameters');
+  console.log('(3:13)', 'a:', a);
+  console.log('(3:16)', 'b:', b);
+  console.groupEnd('Parameters');
+  console.groupCollapsed('Variables');
+  console.groupEnd('Variables');
+  console.groupCollapsed('Return');
+  console.log('(5:9)', a + b);
+  console.groupEnd('Return');
+  console.groupCollapsed('Script');
+  console.log('(3:6)', 'add:', add);
+  console.groupEnd('Script');
+  console.groupEnd('(3:6) const add = (a, b) => {...}');
+
+  return a + b;
+};
+"
+`;

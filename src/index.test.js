@@ -217,6 +217,28 @@ pluginTester({
       }
       `
     },
+    'Remove import statements from script scope': {
+      snapshot: true,
+      code: `
+      import x from 'x';
+
+      const add = (a, b) => {
+        console.scope('Adding stuff up');
+        return a + b;
+      }
+      `
+    },
+    'Remove require statements from script scope': {
+      snapshot: true,
+      code: `
+      const x = require('x');
+
+      const add = (a, b) => {
+        console.scope('Adding stuff up');
+        return a + b;
+      }
+      `
+    },
     'module.exports function': {
       skip: true,
       snapshot: true,

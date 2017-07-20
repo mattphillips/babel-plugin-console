@@ -114,7 +114,6 @@ function add(a, b) {
   console.log('(5:9)', a + b + c);
   console.groupEnd('Return');
   console.groupCollapsed('Script');
-  console.log('(1:7)', 'scope:', scope);
   console.log('(2:9)', 'add:', add);
   console.groupEnd('Script');
   console.groupEnd('(2:0) function add(a, b) {...}');
@@ -150,7 +149,6 @@ const add = function (a, b) {
   console.log('(5:9)', a + b + c);
   console.groupEnd('Return');
   console.groupCollapsed('Script');
-  console.log('(1:7)', 'scope:', scope);
   console.log('(2:6)', 'add:', add);
   console.groupEnd('Script');
   console.groupEnd('(2:6) const add = function(a, b) => {...}');
@@ -186,7 +184,6 @@ let add = function (a, b) {
   console.log('(5:9)', a + b + c);
   console.groupEnd('Return');
   console.groupCollapsed('Script');
-  console.log('(1:7)', 'scope:', scope);
   console.log('(2:4)', 'add:', add);
   console.groupEnd('Script');
   console.groupEnd('(2:4) let add = function(a, b) => {...}');
@@ -222,7 +219,6 @@ const add = (a, b) => {
   console.log('(5:9)', a + b + c);
   console.groupEnd('Return');
   console.groupCollapsed('Script');
-  console.log('(1:7)', 'scope:', scope);
   console.log('(2:6)', 'add:', add);
   console.groupEnd('Script');
   console.groupEnd('(2:6) const add = (a, b) => {...}');
@@ -258,7 +254,6 @@ let add = (a, b) => {
   console.log('(5:9)', a + b + c);
   console.groupEnd('Return');
   console.groupCollapsed('Script');
-  console.log('(1:7)', 'scope:', scope);
   console.log('(2:4)', 'add:', add);
   console.groupEnd('Script');
   console.groupEnd('(2:4) let add = (a, b) => {...}');
@@ -294,7 +289,6 @@ const add = a => b => {
   console.log('(5:9)', a + b + c);
   console.groupEnd('Return');
   console.groupCollapsed('Script');
-  console.log('(1:7)', 'scope:', scope);
   console.log('(2:6)', 'add:', add);
   console.groupEnd('Script');
   console.groupEnd('(2:0) const add = (a) => (b) => {...}');
@@ -333,7 +327,6 @@ function add(a) {
     console.log('(6:11)', a + b + c);
     console.groupEnd('Return');
     console.groupCollapsed('Script');
-    console.log('(1:7)', 'scope:', scope);
     console.log('(2:9)', 'add:', add);
     console.groupEnd('Script');
     console.groupEnd('(2:0) const add = (a) => (b) => {...}');
@@ -373,7 +366,6 @@ const add = function (a) {
     console.log('(6:11)', a + b + c);
     console.groupEnd('Return');
     console.groupCollapsed('Script');
-    console.log('(1:7)', 'scope:', scope);
     console.log('(2:6)', 'add:', add);
     console.groupEnd('Script');
     console.groupEnd('(2:0) const add = (a) => (b) => {...}');
@@ -417,7 +409,6 @@ const add = function (a) {
       console.log('(7:13)', a + b + c + d);
       console.groupEnd('Return');
       console.groupCollapsed('Script');
-      console.log('(1:7)', 'scope:', scope);
       console.log('(2:6)', 'add:', add);
       console.groupEnd('Script');
       console.groupEnd('(2:0) const add = (a) => (b) => (c) => {...}');
@@ -452,7 +443,6 @@ const add = function (a, b) {
   console.log('Void');
   console.groupEnd('Return');
   console.groupCollapsed('Script');
-  console.log('(1:7)', 'scope:', scope);
   console.log('(2:6)', 'add:', add);
   console.groupEnd('Script');
   console.groupEnd('(2:6) const add = function(a, b) => {...}');
@@ -493,7 +483,6 @@ function add(a, b) {
   console.log('(8:9)', a + b);
   console.groupEnd('Return');
   console.groupCollapsed('Script');
-  console.log('(1:7)', 'scope:', scope);
   console.log('(2:6)', 'hello:', hello);
   console.log('(3:9)', 'divide:', divide);
   console.log('(6:9)', 'add:', add);
@@ -528,7 +517,6 @@ export default function (state = 0, action) {
   console.log('(4:9)', state + 1);
   console.groupEnd('Return');
   console.groupCollapsed('Script');
-  console.log('(1:7)', 'scope:', scope);
   console.groupEnd('Script');
   console.groupEnd('(2:0) export default function (state, action) {...}');
 
@@ -561,7 +549,6 @@ export default (addOne => (state = 0, action) => {
   console.log('(4:9)', addOne(state));
   console.groupEnd('Return');
   console.groupCollapsed('Script');
-  console.log('(1:7)', 'scope:', scope);
   console.groupEnd('Script');
   console.groupEnd('(2:0) export default = (addOne) => (state, action) => {...}');
 
@@ -592,7 +579,6 @@ const sum = (...xs) => {
   console.log('(4:9)', xs.reduce((acc, x) => acc + x, 0));
   console.groupEnd('Return');
   console.groupCollapsed('Script');
-  console.log('(1:7)', 'scope:', scope);
   console.log('(2:6)', 'sum:', sum);
   console.groupEnd('Script');
   console.groupEnd('(2:6) const sum = (xs) => {...}');
@@ -629,7 +615,6 @@ const sum = (...xs) => {
   console.log('(4:9)', xs.reduce((acc, x) => acc + x, 0));
   console.groupEnd('Return');
   console.groupCollapsed('Script');
-  console.log('(1:7)', 'scope:', scope);
   console.log('(2:6)', 'sum:', sum);
   console.log('(7:6)', 'add:', add);
   console.groupEnd('Script');
@@ -651,7 +636,6 @@ const add = (a, b) => {
   console.log('(9:9)', a + b);
   console.groupEnd('Return');
   console.groupCollapsed('Script');
-  console.log('(1:7)', 'scope:', scope);
   console.log('(2:6)', 'sum:', sum);
   console.log('(7:6)', 'add:', add);
   console.groupEnd('Script');
@@ -684,12 +668,77 @@ const getApi = async url => {
   console.log('(4:9)', (await fetch(url)));
   console.groupEnd('Return');
   console.groupCollapsed('Script');
-  console.log('(1:7)', 'scope:', scope);
   console.log('(2:6)', 'getApi:', getApi);
   console.groupEnd('Script');
   console.groupEnd('(2:6) const getApi = (url) => {...}');
 
   return await fetch(url);
+};
+"
+`;
+
+exports[`25. macros 1`] = `
+"
+import scope from './scope.macro';
+
+const add = (a, b) => {
+  scope('Adding stuff up');
+  return a + b;
+}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const add = (a, b) => {
+  console.log('Adding stuff up');
+  console.groupCollapsed('(3:6) const add = (a, b) => {...}');
+  console.groupCollapsed('Parameters');
+  console.log('(3:13)', 'a:', a);
+  console.log('(3:16)', 'b:', b);
+  console.groupEnd('Parameters');
+  console.groupCollapsed('Variables');
+  console.groupEnd('Variables');
+  console.groupCollapsed('Return');
+  console.log('(5:9)', a + b);
+  console.groupEnd('Return');
+  console.groupCollapsed('Script');
+  console.log('(3:6)', 'add:', add);
+  console.groupEnd('Script');
+  console.groupEnd('(3:6) const add = (a, b) => {...}');
+
+  return a + b;
+};
+"
+`;
+
+exports[`26. macros 1`] = `
+"
+const scope = require('./scope.macro');
+
+const add = (a, b) => {
+  scope('Adding stuff up');
+  return a + b;
+}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const add = (a, b) => {
+  console.log('Adding stuff up');
+  console.groupCollapsed('(3:6) const add = (a, b) => {...}');
+  console.groupCollapsed('Parameters');
+  console.log('(3:13)', 'a:', a);
+  console.log('(3:16)', 'b:', b);
+  console.groupEnd('Parameters');
+  console.groupCollapsed('Variables');
+  console.groupEnd('Variables');
+  console.groupCollapsed('Return');
+  console.log('(5:9)', a + b);
+  console.groupEnd('Return');
+  console.groupCollapsed('Script');
+  console.log('(3:6)', 'add:', add);
+  console.groupEnd('Script');
+  console.groupEnd('(3:6) const add = (a, b) => {...}');
+
+  return a + b;
 };
 "
 `;

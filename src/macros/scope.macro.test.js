@@ -284,6 +284,28 @@ pluginTester({
         }
       }
       `
+    },
+    'Remove import statements from script scope': {
+      snapshot: true,
+      code: `
+      import scope from './scope.macro';
+
+      const add = (a, b) => {
+        scope('Adding stuff up');
+        return a + b;
+      }
+      `
+    },
+    'Remove require statements from script scope': {
+      snapshot: true,
+      code: `
+      const scope = require('./scope.macro');
+
+      const add = (a, b) => {
+        scope('Adding stuff up');
+        return a + b;
+      }
+      `
     }
   })
 });
