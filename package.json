@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-console",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Babel plugin with additional console helper functions",
   "main": "dist/index.js",
   "files": [
