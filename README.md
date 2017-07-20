@@ -109,7 +109,11 @@ const add = (a, b) => {
 
 **Browser:**
 
-![Console scoping add100](assets/add100-dark.gif)
+![Browser console scoping add100](assets/add100-chrome.gif)
+
+**Node:**
+
+![Node console scoping add100](assets/add100-node.png)
 
 ### Macros
 
