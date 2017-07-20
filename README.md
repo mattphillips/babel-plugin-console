@@ -113,7 +113,7 @@ const add = (a, b) => {
 
 **Node:**
 
-![Node console scoping add100](assets/add100-node.png)
+<img alt="Node console scoping add100" src="assets/add100-node.png" width="372">
 
 ### Macros
 
