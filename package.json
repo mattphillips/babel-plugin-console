@@ -14,6 +14,7 @@
     "lint": "eslint src",
     "lint:fix": "yarn lint -- --fix",
     "precommit": "lint-staged",
+    "prepublish": "yarn build",
     "prettier": "prettier 'src/**/*.js' --write --single-quote=true --print-width=120",
     "test": "jest",
     "test:coverage": "yarn test -- --coverage",
