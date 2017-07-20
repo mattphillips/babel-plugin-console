@@ -22,16 +22,16 @@ export default (path, template, t) => {
 
   const mapIdentifer = identifier => {
     const { loc: { start: { column, line } }, name } = identifier;
-    return buildLog(t.stringLiteral(`(${line}:${column})`), t.stringLiteral(`${name}:`), identifier);
+    return buildLog(t.stringLiteral(`(${line}:${column})`), t.stringLiteral(`${name}:`), identifier)(1);
   };
   const parameters = parameterIdentifiers.map(mapIdentifer);
   const variables = variableIdentifiers.map(mapIdentifer);
   const buildReturn = returnStatement => {
     if (returnStatement) {
       const { loc: { start: { column, line } } } = returnStatement;
-      return buildLog(t.stringLiteral(`(${line}:${column})`), returnStatement);
+      return buildLog(t.stringLiteral(`(${line}:${column})`), returnStatement)(1);
     }
-    return buildLog(t.stringLiteral('Void'));
+    return buildLog(t.stringLiteral('Void'))(1);
   };
 
   const joinParams = params => params.map(({ name }) => name).join(', ');
@@ -59,12 +59,12 @@ export default (path, template, t) => {
           name,
           joinParams(binding.path.node.init.params)
         );
-        return buildLog(t.stringLiteral(signature));
+        return buildLog(t.stringLiteral(signature))(1);
       }
 
       if (isFunction) {
         const signature = buildFunctionDeclarationSignature(line, column, name, joinParams(binding.path.node.params));
-        return buildLog(t.stringLiteral(signature));
+        return buildLog(t.stringLiteral(signature))(1);
       }
 
       if (isFunctionExpression) {
@@ -75,25 +75,25 @@ export default (path, template, t) => {
           name,
           joinParams(binding.path.node.init.params)
         );
-        return buildLog(t.stringLiteral(signature));
+        return buildLog(t.stringLiteral(signature))(1);
       }
 
-      return buildLog(t.stringLiteral(`(${line}:${column})`), t.stringLiteral(`${name}:`), identifier);
+      return buildLog(t.stringLiteral(`(${line}:${column})`), t.stringLiteral(`${name}:`), identifier)(1);
     });
 
   return [
-    buildLog(...path.node.arguments),
-    buildGroupCollapsed(t.stringLiteral(signature)),
-    buildGroupCollapsed(t.stringLiteral('Parameters')),
+    buildLog(...path.node.arguments)(0),
+    buildGroupCollapsed(t.stringLiteral(signature))(0),
+    buildGroupCollapsed(t.stringLiteral('Parameters'))(1),
     ...parameters,
     buildGroupEnd(t.stringLiteral('Parameters')),
-    buildGroupCollapsed(t.stringLiteral('Variables')),
+    buildGroupCollapsed(t.stringLiteral('Variables'))(1),
     ...variables,
     buildGroupEnd(t.stringLiteral('Variables')),
-    buildGroupCollapsed(t.stringLiteral('Return')),
+    buildGroupCollapsed(t.stringLiteral('Return'))(1),
     buildReturn(returnStatement),
     buildGroupEnd(t.stringLiteral('Return')),
-    buildGroupCollapsed(t.stringLiteral('Script')),
+    buildGroupCollapsed(t.stringLiteral('Script'))(1),
     ...scriptScope,
     buildGroupEnd(t.stringLiteral('Script')),
     buildGroupEnd(t.stringLiteral(signature))

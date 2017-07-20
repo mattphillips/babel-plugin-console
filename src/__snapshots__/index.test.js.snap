@@ -24,21 +24,86 @@ function add(a, b) {
 function add(a, b) {
   const c = 10;
   console.log('Custom add function message');
-  console.groupCollapsed('(1:0) function add(a, b) {...}');
-  console.groupCollapsed('Parameters');
-  console.log('(1:13)', 'a:', a);
-  console.log('(1:16)', 'b:', b);
-  console.groupEnd('Parameters');
-  console.groupCollapsed('Variables');
-  console.log('(2:8)', 'c:', c);
-  console.groupEnd('Variables');
-  console.groupCollapsed('Return');
-  console.log('(4:9)', a + b + c);
-  console.groupEnd('Return');
-  console.groupCollapsed('Script');
-  console.log('(1:9) function add(a, b) {...}');
-  console.groupEnd('Script');
-  console.groupEnd('(1:0) function add(a, b) {...}');
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('(1:0) function add(a, b) {...}');
+  } else {
+    console.log('▼ ', '(1:0) function add(a, b) {...}');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Parameters');
+  } else {
+    console.log('| ▼ ', 'Parameters');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(1:13)', 'a:', a);
+  } else {
+    console.log('| | ', '(1:13)', 'a:', a);
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(1:16)', 'b:', b);
+  } else {
+    console.log('| | ', '(1:16)', 'b:', b);
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Parameters');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Variables');
+  } else {
+    console.log('| ▼ ', 'Variables');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(2:8)', 'c:', c);
+  } else {
+    console.log('| | ', '(2:8)', 'c:', c);
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Variables');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Return');
+  } else {
+    console.log('| ▼ ', 'Return');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(4:9)', a + b + c);
+  } else {
+    console.log('| | ', '(4:9)', a + b + c);
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Return');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Script');
+  } else {
+    console.log('| ▼ ', 'Script');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(1:9) function add(a, b) {...}');
+  } else {
+    console.log('| | ', '(1:9) function add(a, b) {...}');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Script');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('(1:0) function add(a, b) {...}');
+  }
 
   return a + b + c;
 }
@@ -58,21 +123,86 @@ const add = function(a, b) {
 const add = function (a, b) {
   const c = 10;
   console.log('Custom add function message');
-  console.groupCollapsed('(1:6) const add = function(a, b) => {...}');
-  console.groupCollapsed('Parameters');
-  console.log('(1:21)', 'a:', a);
-  console.log('(1:24)', 'b:', b);
-  console.groupEnd('Parameters');
-  console.groupCollapsed('Variables');
-  console.log('(2:8)', 'c:', c);
-  console.groupEnd('Variables');
-  console.groupCollapsed('Return');
-  console.log('(4:9)', a + b + c);
-  console.groupEnd('Return');
-  console.groupCollapsed('Script');
-  console.log('(1:6) const add = function(a, b) => {...}');
-  console.groupEnd('Script');
-  console.groupEnd('(1:6) const add = function(a, b) => {...}');
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('(1:6) const add = function(a, b) => {...}');
+  } else {
+    console.log('▼ ', '(1:6) const add = function(a, b) => {...}');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Parameters');
+  } else {
+    console.log('| ▼ ', 'Parameters');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(1:21)', 'a:', a);
+  } else {
+    console.log('| | ', '(1:21)', 'a:', a);
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(1:24)', 'b:', b);
+  } else {
+    console.log('| | ', '(1:24)', 'b:', b);
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Parameters');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Variables');
+  } else {
+    console.log('| ▼ ', 'Variables');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(2:8)', 'c:', c);
+  } else {
+    console.log('| | ', '(2:8)', 'c:', c);
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Variables');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Return');
+  } else {
+    console.log('| ▼ ', 'Return');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(4:9)', a + b + c);
+  } else {
+    console.log('| | ', '(4:9)', a + b + c);
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Return');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Script');
+  } else {
+    console.log('| ▼ ', 'Script');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(1:6) const add = function(a, b) => {...}');
+  } else {
+    console.log('| | ', '(1:6) const add = function(a, b) => {...}');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Script');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('(1:6) const add = function(a, b) => {...}');
+  }
 
   return a + b + c;
 };
@@ -92,21 +222,86 @@ let add = function(a, b) {
 let add = function (a, b) {
   const c = 10;
   console.log('Custom add function message');
-  console.groupCollapsed('(1:4) let add = function(a, b) => {...}');
-  console.groupCollapsed('Parameters');
-  console.log('(1:19)', 'a:', a);
-  console.log('(1:22)', 'b:', b);
-  console.groupEnd('Parameters');
-  console.groupCollapsed('Variables');
-  console.log('(2:8)', 'c:', c);
-  console.groupEnd('Variables');
-  console.groupCollapsed('Return');
-  console.log('(4:9)', a + b + c);
-  console.groupEnd('Return');
-  console.groupCollapsed('Script');
-  console.log('(1:4) let add = function(a, b) => {...}');
-  console.groupEnd('Script');
-  console.groupEnd('(1:4) let add = function(a, b) => {...}');
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('(1:4) let add = function(a, b) => {...}');
+  } else {
+    console.log('▼ ', '(1:4) let add = function(a, b) => {...}');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Parameters');
+  } else {
+    console.log('| ▼ ', 'Parameters');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(1:19)', 'a:', a);
+  } else {
+    console.log('| | ', '(1:19)', 'a:', a);
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(1:22)', 'b:', b);
+  } else {
+    console.log('| | ', '(1:22)', 'b:', b);
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Parameters');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Variables');
+  } else {
+    console.log('| ▼ ', 'Variables');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(2:8)', 'c:', c);
+  } else {
+    console.log('| | ', '(2:8)', 'c:', c);
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Variables');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Return');
+  } else {
+    console.log('| ▼ ', 'Return');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(4:9)', a + b + c);
+  } else {
+    console.log('| | ', '(4:9)', a + b + c);
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Return');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Script');
+  } else {
+    console.log('| ▼ ', 'Script');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(1:4) let add = function(a, b) => {...}');
+  } else {
+    console.log('| | ', '(1:4) let add = function(a, b) => {...}');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Script');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('(1:4) let add = function(a, b) => {...}');
+  }
 
   return a + b + c;
 };
@@ -126,21 +321,86 @@ const add = (a, b) => {
 const add = (a, b) => {
   const c = 10;
   console.log('Custom add function message');
-  console.groupCollapsed('(1:6) const add = (a, b) => {...}');
-  console.groupCollapsed('Parameters');
-  console.log('(1:13)', 'a:', a);
-  console.log('(1:16)', 'b:', b);
-  console.groupEnd('Parameters');
-  console.groupCollapsed('Variables');
-  console.log('(2:8)', 'c:', c);
-  console.groupEnd('Variables');
-  console.groupCollapsed('Return');
-  console.log('(4:9)', a + b + c);
-  console.groupEnd('Return');
-  console.groupCollapsed('Script');
-  console.log('(1:6) const add = (a, b) => {...}');
-  console.groupEnd('Script');
-  console.groupEnd('(1:6) const add = (a, b) => {...}');
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('(1:6) const add = (a, b) => {...}');
+  } else {
+    console.log('▼ ', '(1:6) const add = (a, b) => {...}');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Parameters');
+  } else {
+    console.log('| ▼ ', 'Parameters');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(1:13)', 'a:', a);
+  } else {
+    console.log('| | ', '(1:13)', 'a:', a);
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(1:16)', 'b:', b);
+  } else {
+    console.log('| | ', '(1:16)', 'b:', b);
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Parameters');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Variables');
+  } else {
+    console.log('| ▼ ', 'Variables');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(2:8)', 'c:', c);
+  } else {
+    console.log('| | ', '(2:8)', 'c:', c);
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Variables');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Return');
+  } else {
+    console.log('| ▼ ', 'Return');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(4:9)', a + b + c);
+  } else {
+    console.log('| | ', '(4:9)', a + b + c);
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Return');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Script');
+  } else {
+    console.log('| ▼ ', 'Script');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(1:6) const add = (a, b) => {...}');
+  } else {
+    console.log('| | ', '(1:6) const add = (a, b) => {...}');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Script');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('(1:6) const add = (a, b) => {...}');
+  }
 
   return a + b + c;
 };
@@ -160,21 +420,86 @@ let add = (a, b) => {
 let add = (a, b) => {
   const c = 10;
   console.log('Custom add function message');
-  console.groupCollapsed('(1:4) let add = (a, b) => {...}');
-  console.groupCollapsed('Parameters');
-  console.log('(1:11)', 'a:', a);
-  console.log('(1:14)', 'b:', b);
-  console.groupEnd('Parameters');
-  console.groupCollapsed('Variables');
-  console.log('(2:8)', 'c:', c);
-  console.groupEnd('Variables');
-  console.groupCollapsed('Return');
-  console.log('(4:9)', a + b + c);
-  console.groupEnd('Return');
-  console.groupCollapsed('Script');
-  console.log('(1:4) let add = (a, b) => {...}');
-  console.groupEnd('Script');
-  console.groupEnd('(1:4) let add = (a, b) => {...}');
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('(1:4) let add = (a, b) => {...}');
+  } else {
+    console.log('▼ ', '(1:4) let add = (a, b) => {...}');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Parameters');
+  } else {
+    console.log('| ▼ ', 'Parameters');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(1:11)', 'a:', a);
+  } else {
+    console.log('| | ', '(1:11)', 'a:', a);
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(1:14)', 'b:', b);
+  } else {
+    console.log('| | ', '(1:14)', 'b:', b);
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Parameters');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Variables');
+  } else {
+    console.log('| ▼ ', 'Variables');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(2:8)', 'c:', c);
+  } else {
+    console.log('| | ', '(2:8)', 'c:', c);
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Variables');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Return');
+  } else {
+    console.log('| ▼ ', 'Return');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(4:9)', a + b + c);
+  } else {
+    console.log('| | ', '(4:9)', a + b + c);
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Return');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Script');
+  } else {
+    console.log('| ▼ ', 'Script');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(1:4) let add = (a, b) => {...}');
+  } else {
+    console.log('| | ', '(1:4) let add = (a, b) => {...}');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Script');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('(1:4) let add = (a, b) => {...}');
+  }
 
   return a + b + c;
 };
@@ -194,21 +519,86 @@ const add = (a) => (b) => {
 const add = a => b => {
   const c = 10;
   console.log('Custom add function message');
-  console.groupCollapsed('(1:0) const add = (a) => (b) => {...}');
-  console.groupCollapsed('Parameters');
-  console.log('(1:13)', 'a:', a);
-  console.log('(1:20)', 'b:', b);
-  console.groupEnd('Parameters');
-  console.groupCollapsed('Variables');
-  console.log('(2:8)', 'c:', c);
-  console.groupEnd('Variables');
-  console.groupCollapsed('Return');
-  console.log('(4:9)', a + b + c);
-  console.groupEnd('Return');
-  console.groupCollapsed('Script');
-  console.log('(1:6) const add = (a) => {...}');
-  console.groupEnd('Script');
-  console.groupEnd('(1:0) const add = (a) => (b) => {...}');
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('(1:0) const add = (a) => (b) => {...}');
+  } else {
+    console.log('▼ ', '(1:0) const add = (a) => (b) => {...}');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Parameters');
+  } else {
+    console.log('| ▼ ', 'Parameters');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(1:13)', 'a:', a);
+  } else {
+    console.log('| | ', '(1:13)', 'a:', a);
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(1:20)', 'b:', b);
+  } else {
+    console.log('| | ', '(1:20)', 'b:', b);
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Parameters');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Variables');
+  } else {
+    console.log('| ▼ ', 'Variables');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(2:8)', 'c:', c);
+  } else {
+    console.log('| | ', '(2:8)', 'c:', c);
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Variables');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Return');
+  } else {
+    console.log('| ▼ ', 'Return');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(4:9)', a + b + c);
+  } else {
+    console.log('| | ', '(4:9)', a + b + c);
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Return');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Script');
+  } else {
+    console.log('| ▼ ', 'Script');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(1:6) const add = (a) => {...}');
+  } else {
+    console.log('| | ', '(1:6) const add = (a) => {...}');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Script');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('(1:0) const add = (a) => (b) => {...}');
+  }
 
   return a + b + c;
 };
@@ -231,21 +621,86 @@ function add(a) {
   return b => {
     const c = 10;
     console.log('Custom add function message');
-    console.groupCollapsed('(1:0) const add = (a) => (b) => {...}');
-    console.groupCollapsed('Parameters');
-    console.log('(1:13)', 'a:', a);
-    console.log('(2:10)', 'b:', b);
-    console.groupEnd('Parameters');
-    console.groupCollapsed('Variables');
-    console.log('(3:10)', 'c:', c);
-    console.groupEnd('Variables');
-    console.groupCollapsed('Return');
-    console.log('(5:11)', a + b + c);
-    console.groupEnd('Return');
-    console.groupCollapsed('Script');
-    console.log('(1:9) function add(a) {...}');
-    console.groupEnd('Script');
-    console.groupEnd('(1:0) const add = (a) => (b) => {...}');
+
+    if (typeof window !== 'undefined') {
+      console.groupCollapsed('(1:0) const add = (a) => (b) => {...}');
+    } else {
+      console.log('▼ ', '(1:0) const add = (a) => (b) => {...}');
+    }
+
+    if (typeof window !== 'undefined') {
+      console.groupCollapsed('Parameters');
+    } else {
+      console.log('| ▼ ', 'Parameters');
+    }
+
+    if (typeof window !== 'undefined') {
+      console.log('(1:13)', 'a:', a);
+    } else {
+      console.log('| | ', '(1:13)', 'a:', a);
+    }
+
+    if (typeof window !== 'undefined') {
+      console.log('(2:10)', 'b:', b);
+    } else {
+      console.log('| | ', '(2:10)', 'b:', b);
+    }
+
+    if (typeof window !== 'undefined') {
+      console.groupEnd('Parameters');
+    }
+
+    if (typeof window !== 'undefined') {
+      console.groupCollapsed('Variables');
+    } else {
+      console.log('| ▼ ', 'Variables');
+    }
+
+    if (typeof window !== 'undefined') {
+      console.log('(3:10)', 'c:', c);
+    } else {
+      console.log('| | ', '(3:10)', 'c:', c);
+    }
+
+    if (typeof window !== 'undefined') {
+      console.groupEnd('Variables');
+    }
+
+    if (typeof window !== 'undefined') {
+      console.groupCollapsed('Return');
+    } else {
+      console.log('| ▼ ', 'Return');
+    }
+
+    if (typeof window !== 'undefined') {
+      console.log('(5:11)', a + b + c);
+    } else {
+      console.log('| | ', '(5:11)', a + b + c);
+    }
+
+    if (typeof window !== 'undefined') {
+      console.groupEnd('Return');
+    }
+
+    if (typeof window !== 'undefined') {
+      console.groupCollapsed('Script');
+    } else {
+      console.log('| ▼ ', 'Script');
+    }
+
+    if (typeof window !== 'undefined') {
+      console.log('(1:9) function add(a) {...}');
+    } else {
+      console.log('| | ', '(1:9) function add(a) {...}');
+    }
+
+    if (typeof window !== 'undefined') {
+      console.groupEnd('Script');
+    }
+
+    if (typeof window !== 'undefined') {
+      console.groupEnd('(1:0) const add = (a) => (b) => {...}');
+    }
 
     return a + b + c;
   };
@@ -269,21 +724,86 @@ const add = function (a) {
   return function (b) {
     const c = 10;
     console.log('Custom add function message');
-    console.groupCollapsed('(1:0) const add = (a) => (b) => {...}');
-    console.groupCollapsed('Parameters');
-    console.log('(1:22)', 'a:', a);
-    console.log('(2:18)', 'b:', b);
-    console.groupEnd('Parameters');
-    console.groupCollapsed('Variables');
-    console.log('(3:10)', 'c:', c);
-    console.groupEnd('Variables');
-    console.groupCollapsed('Return');
-    console.log('(5:11)', a + b + c);
-    console.groupEnd('Return');
-    console.groupCollapsed('Script');
-    console.log('(1:6) const add = function(a) => {...}');
-    console.groupEnd('Script');
-    console.groupEnd('(1:0) const add = (a) => (b) => {...}');
+
+    if (typeof window !== 'undefined') {
+      console.groupCollapsed('(1:0) const add = (a) => (b) => {...}');
+    } else {
+      console.log('▼ ', '(1:0) const add = (a) => (b) => {...}');
+    }
+
+    if (typeof window !== 'undefined') {
+      console.groupCollapsed('Parameters');
+    } else {
+      console.log('| ▼ ', 'Parameters');
+    }
+
+    if (typeof window !== 'undefined') {
+      console.log('(1:22)', 'a:', a);
+    } else {
+      console.log('| | ', '(1:22)', 'a:', a);
+    }
+
+    if (typeof window !== 'undefined') {
+      console.log('(2:18)', 'b:', b);
+    } else {
+      console.log('| | ', '(2:18)', 'b:', b);
+    }
+
+    if (typeof window !== 'undefined') {
+      console.groupEnd('Parameters');
+    }
+
+    if (typeof window !== 'undefined') {
+      console.groupCollapsed('Variables');
+    } else {
+      console.log('| ▼ ', 'Variables');
+    }
+
+    if (typeof window !== 'undefined') {
+      console.log('(3:10)', 'c:', c);
+    } else {
+      console.log('| | ', '(3:10)', 'c:', c);
+    }
+
+    if (typeof window !== 'undefined') {
+      console.groupEnd('Variables');
+    }
+
+    if (typeof window !== 'undefined') {
+      console.groupCollapsed('Return');
+    } else {
+      console.log('| ▼ ', 'Return');
+    }
+
+    if (typeof window !== 'undefined') {
+      console.log('(5:11)', a + b + c);
+    } else {
+      console.log('| | ', '(5:11)', a + b + c);
+    }
+
+    if (typeof window !== 'undefined') {
+      console.groupEnd('Return');
+    }
+
+    if (typeof window !== 'undefined') {
+      console.groupCollapsed('Script');
+    } else {
+      console.log('| ▼ ', 'Script');
+    }
+
+    if (typeof window !== 'undefined') {
+      console.log('(1:6) const add = function(a) => {...}');
+    } else {
+      console.log('| | ', '(1:6) const add = function(a) => {...}');
+    }
+
+    if (typeof window !== 'undefined') {
+      console.groupEnd('Script');
+    }
+
+    if (typeof window !== 'undefined') {
+      console.groupEnd('(1:0) const add = (a) => (b) => {...}');
+    }
 
     return a + b + c;
   };
@@ -310,22 +830,92 @@ const add = function (a) {
     return c => {
       const d = 10;
       console.log('Custom add function message');
-      console.groupCollapsed('(1:0) const add = (a) => (b) => (c) => {...}');
-      console.groupCollapsed('Parameters');
-      console.log('(1:22)', 'a:', a);
-      console.log('(2:18)', 'b:', b);
-      console.log('(3:11)', 'c:', c);
-      console.groupEnd('Parameters');
-      console.groupCollapsed('Variables');
-      console.log('(4:12)', 'd:', d);
-      console.groupEnd('Variables');
-      console.groupCollapsed('Return');
-      console.log('(6:13)', a + b + c + d);
-      console.groupEnd('Return');
-      console.groupCollapsed('Script');
-      console.log('(1:6) const add = function(a) => {...}');
-      console.groupEnd('Script');
-      console.groupEnd('(1:0) const add = (a) => (b) => (c) => {...}');
+
+      if (typeof window !== 'undefined') {
+        console.groupCollapsed('(1:0) const add = (a) => (b) => (c) => {...}');
+      } else {
+        console.log('▼ ', '(1:0) const add = (a) => (b) => (c) => {...}');
+      }
+
+      if (typeof window !== 'undefined') {
+        console.groupCollapsed('Parameters');
+      } else {
+        console.log('| ▼ ', 'Parameters');
+      }
+
+      if (typeof window !== 'undefined') {
+        console.log('(1:22)', 'a:', a);
+      } else {
+        console.log('| | ', '(1:22)', 'a:', a);
+      }
+
+      if (typeof window !== 'undefined') {
+        console.log('(2:18)', 'b:', b);
+      } else {
+        console.log('| | ', '(2:18)', 'b:', b);
+      }
+
+      if (typeof window !== 'undefined') {
+        console.log('(3:11)', 'c:', c);
+      } else {
+        console.log('| | ', '(3:11)', 'c:', c);
+      }
+
+      if (typeof window !== 'undefined') {
+        console.groupEnd('Parameters');
+      }
+
+      if (typeof window !== 'undefined') {
+        console.groupCollapsed('Variables');
+      } else {
+        console.log('| ▼ ', 'Variables');
+      }
+
+      if (typeof window !== 'undefined') {
+        console.log('(4:12)', 'd:', d);
+      } else {
+        console.log('| | ', '(4:12)', 'd:', d);
+      }
+
+      if (typeof window !== 'undefined') {
+        console.groupEnd('Variables');
+      }
+
+      if (typeof window !== 'undefined') {
+        console.groupCollapsed('Return');
+      } else {
+        console.log('| ▼ ', 'Return');
+      }
+
+      if (typeof window !== 'undefined') {
+        console.log('(6:13)', a + b + c + d);
+      } else {
+        console.log('| | ', '(6:13)', a + b + c + d);
+      }
+
+      if (typeof window !== 'undefined') {
+        console.groupEnd('Return');
+      }
+
+      if (typeof window !== 'undefined') {
+        console.groupCollapsed('Script');
+      } else {
+        console.log('| ▼ ', 'Script');
+      }
+
+      if (typeof window !== 'undefined') {
+        console.log('(1:6) const add = function(a) => {...}');
+      } else {
+        console.log('| | ', '(1:6) const add = function(a) => {...}');
+      }
+
+      if (typeof window !== 'undefined') {
+        console.groupEnd('Script');
+      }
+
+      if (typeof window !== 'undefined') {
+        console.groupEnd('(1:0) const add = (a) => (b) => (c) => {...}');
+      }
 
       return a + b + c + d;
     };
@@ -345,20 +935,80 @@ const add = function (a, b) {
 
 const add = function (a, b) {
   console.log('Custom add function message');
-  console.groupCollapsed('(1:6) const add = function(a, b) => {...}');
-  console.groupCollapsed('Parameters');
-  console.log('(1:22)', 'a:', a);
-  console.log('(1:25)', 'b:', b);
-  console.groupEnd('Parameters');
-  console.groupCollapsed('Variables');
-  console.groupEnd('Variables');
-  console.groupCollapsed('Return');
-  console.log('Void');
-  console.groupEnd('Return');
-  console.groupCollapsed('Script');
-  console.log('(1:6) const add = function(a, b) => {...}');
-  console.groupEnd('Script');
-  console.groupEnd('(1:6) const add = function(a, b) => {...}');
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('(1:6) const add = function(a, b) => {...}');
+  } else {
+    console.log('▼ ', '(1:6) const add = function(a, b) => {...}');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Parameters');
+  } else {
+    console.log('| ▼ ', 'Parameters');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(1:22)', 'a:', a);
+  } else {
+    console.log('| | ', '(1:22)', 'a:', a);
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(1:25)', 'b:', b);
+  } else {
+    console.log('| | ', '(1:25)', 'b:', b);
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Parameters');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Variables');
+  } else {
+    console.log('| ▼ ', 'Variables');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Variables');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Return');
+  } else {
+    console.log('| ▼ ', 'Return');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('Void');
+  } else {
+    console.log('| | ', 'Void');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Return');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Script');
+  } else {
+    console.log('| ▼ ', 'Script');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(1:6) const add = function(a, b) => {...}');
+  } else {
+    console.log('| | ', '(1:6) const add = function(a, b) => {...}');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Script');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('(1:6) const add = function(a, b) => {...}');
+  }
 
   a + b;
 };
@@ -384,22 +1034,92 @@ function divide(a, b) {
 }
 function add(a, b) {
   console.log('Custom add function message');
-  console.groupCollapsed('(5:0) function add(a, b) {...}');
-  console.groupCollapsed('Parameters');
-  console.log('(5:13)', 'a:', a);
-  console.log('(5:16)', 'b:', b);
-  console.groupEnd('Parameters');
-  console.groupCollapsed('Variables');
-  console.groupEnd('Variables');
-  console.groupCollapsed('Return');
-  console.log('(7:9)', a + b);
-  console.groupEnd('Return');
-  console.groupCollapsed('Script');
-  console.log('(1:6)', 'hello:', hello);
-  console.log('(2:9) function divide(a, b) {...}');
-  console.log('(5:9) function add(a, b) {...}');
-  console.groupEnd('Script');
-  console.groupEnd('(5:0) function add(a, b) {...}');
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('(5:0) function add(a, b) {...}');
+  } else {
+    console.log('▼ ', '(5:0) function add(a, b) {...}');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Parameters');
+  } else {
+    console.log('| ▼ ', 'Parameters');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(5:13)', 'a:', a);
+  } else {
+    console.log('| | ', '(5:13)', 'a:', a);
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(5:16)', 'b:', b);
+  } else {
+    console.log('| | ', '(5:16)', 'b:', b);
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Parameters');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Variables');
+  } else {
+    console.log('| ▼ ', 'Variables');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Variables');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Return');
+  } else {
+    console.log('| ▼ ', 'Return');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(7:9)', a + b);
+  } else {
+    console.log('| | ', '(7:9)', a + b);
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Return');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Script');
+  } else {
+    console.log('| ▼ ', 'Script');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(1:6)', 'hello:', hello);
+  } else {
+    console.log('| | ', '(1:6)', 'hello:', hello);
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(2:9) function divide(a, b) {...}');
+  } else {
+    console.log('| | ', '(2:9) function divide(a, b) {...}');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(5:9) function add(a, b) {...}');
+  } else {
+    console.log('| | ', '(5:9) function add(a, b) {...}');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Script');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('(5:0) function add(a, b) {...}');
+  }
 
   return a + b;
 }
@@ -417,19 +1137,74 @@ export default function(state = 0, action) {
 
 export default function (state = 0, action) {
   console.log('Add one reducer');
-  console.groupCollapsed('(1:0) export default function (state, action) {...}');
-  console.groupCollapsed('Parameters');
-  console.log('(1:24)', 'state:', state);
-  console.log('(1:35)', 'action:', action);
-  console.groupEnd('Parameters');
-  console.groupCollapsed('Variables');
-  console.groupEnd('Variables');
-  console.groupCollapsed('Return');
-  console.log('(3:9)', state + 1);
-  console.groupEnd('Return');
-  console.groupCollapsed('Script');
-  console.groupEnd('Script');
-  console.groupEnd('(1:0) export default function (state, action) {...}');
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('(1:0) export default function (state, action) {...}');
+  } else {
+    console.log('▼ ', '(1:0) export default function (state, action) {...}');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Parameters');
+  } else {
+    console.log('| ▼ ', 'Parameters');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(1:24)', 'state:', state);
+  } else {
+    console.log('| | ', '(1:24)', 'state:', state);
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(1:35)', 'action:', action);
+  } else {
+    console.log('| | ', '(1:35)', 'action:', action);
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Parameters');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Variables');
+  } else {
+    console.log('| ▼ ', 'Variables');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Variables');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Return');
+  } else {
+    console.log('| ▼ ', 'Return');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(3:9)', state + 1);
+  } else {
+    console.log('| | ', '(3:9)', state + 1);
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Return');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Script');
+  } else {
+    console.log('| ▼ ', 'Script');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Script');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('(1:0) export default function (state, action) {...}');
+  }
 
   return state + 1;
 }
@@ -447,20 +1222,80 @@ export default addOne => (state = 0, action) => {
 
 export default (addOne => (state = 0, action) => {
   console.log('Add one reducer');
-  console.groupCollapsed('(1:0) export default = (addOne) => (state, action) => {...}');
-  console.groupCollapsed('Parameters');
-  console.log('(1:15)', 'addOne:', addOne);
-  console.log('(1:26)', 'state:', state);
-  console.log('(1:37)', 'action:', action);
-  console.groupEnd('Parameters');
-  console.groupCollapsed('Variables');
-  console.groupEnd('Variables');
-  console.groupCollapsed('Return');
-  console.log('(3:9)', addOne(state));
-  console.groupEnd('Return');
-  console.groupCollapsed('Script');
-  console.groupEnd('Script');
-  console.groupEnd('(1:0) export default = (addOne) => (state, action) => {...}');
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('(1:0) export default = (addOne) => (state, action) => {...}');
+  } else {
+    console.log('▼ ', '(1:0) export default = (addOne) => (state, action) => {...}');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Parameters');
+  } else {
+    console.log('| ▼ ', 'Parameters');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(1:15)', 'addOne:', addOne);
+  } else {
+    console.log('| | ', '(1:15)', 'addOne:', addOne);
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(1:26)', 'state:', state);
+  } else {
+    console.log('| | ', '(1:26)', 'state:', state);
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(1:37)', 'action:', action);
+  } else {
+    console.log('| | ', '(1:37)', 'action:', action);
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Parameters');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Variables');
+  } else {
+    console.log('| ▼ ', 'Variables');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Variables');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Return');
+  } else {
+    console.log('| ▼ ', 'Return');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(3:9)', addOne(state));
+  } else {
+    console.log('| | ', '(3:9)', addOne(state));
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Return');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Script');
+  } else {
+    console.log('| ▼ ', 'Script');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Script');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('(1:0) export default = (addOne) => (state, action) => {...}');
+  }
 
   return addOne(state);
 });
@@ -478,19 +1313,74 @@ const sum = (...xs) => {
 
 const sum = (...xs) => {
   console.log('Sum args');
-  console.groupCollapsed('(1:6) const sum = (xs) => {...}');
-  console.groupCollapsed('Parameters');
-  console.log('(1:16)', 'xs:', xs);
-  console.groupEnd('Parameters');
-  console.groupCollapsed('Variables');
-  console.groupEnd('Variables');
-  console.groupCollapsed('Return');
-  console.log('(3:9)', xs.reduce((acc, x) => acc + x, 0));
-  console.groupEnd('Return');
-  console.groupCollapsed('Script');
-  console.log('(1:6) const sum = () => {...}');
-  console.groupEnd('Script');
-  console.groupEnd('(1:6) const sum = (xs) => {...}');
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('(1:6) const sum = (xs) => {...}');
+  } else {
+    console.log('▼ ', '(1:6) const sum = (xs) => {...}');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Parameters');
+  } else {
+    console.log('| ▼ ', 'Parameters');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(1:16)', 'xs:', xs);
+  } else {
+    console.log('| | ', '(1:16)', 'xs:', xs);
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Parameters');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Variables');
+  } else {
+    console.log('| ▼ ', 'Variables');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Variables');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Return');
+  } else {
+    console.log('| ▼ ', 'Return');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(3:9)', xs.reduce((acc, x) => acc + x, 0));
+  } else {
+    console.log('| | ', '(3:9)', xs.reduce((acc, x) => acc + x, 0));
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Return');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Script');
+  } else {
+    console.log('| ▼ ', 'Script');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(1:6) const sum = () => {...}');
+  } else {
+    console.log('| | ', '(1:6) const sum = () => {...}');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Script');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('(1:6) const sum = (xs) => {...}');
+  }
 
   return xs.reduce((acc, x) => acc + x, 0);
 };
@@ -513,41 +1403,166 @@ const add = (a, b) => {
 
 const sum = (...xs) => {
   console.log('Sum args');
-  console.groupCollapsed('(1:6) const sum = (xs) => {...}');
-  console.groupCollapsed('Parameters');
-  console.log('(1:16)', 'xs:', xs);
-  console.groupEnd('Parameters');
-  console.groupCollapsed('Variables');
-  console.groupEnd('Variables');
-  console.groupCollapsed('Return');
-  console.log('(3:9)', xs.reduce((acc, x) => acc + x, 0));
-  console.groupEnd('Return');
-  console.groupCollapsed('Script');
-  console.log('(1:6) const sum = () => {...}');
-  console.log('(6:6) const add = (a, b) => {...}');
-  console.groupEnd('Script');
-  console.groupEnd('(1:6) const sum = (xs) => {...}');
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('(1:6) const sum = (xs) => {...}');
+  } else {
+    console.log('▼ ', '(1:6) const sum = (xs) => {...}');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Parameters');
+  } else {
+    console.log('| ▼ ', 'Parameters');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(1:16)', 'xs:', xs);
+  } else {
+    console.log('| | ', '(1:16)', 'xs:', xs);
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Parameters');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Variables');
+  } else {
+    console.log('| ▼ ', 'Variables');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Variables');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Return');
+  } else {
+    console.log('| ▼ ', 'Return');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(3:9)', xs.reduce((acc, x) => acc + x, 0));
+  } else {
+    console.log('| | ', '(3:9)', xs.reduce((acc, x) => acc + x, 0));
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Return');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Script');
+  } else {
+    console.log('| ▼ ', 'Script');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(1:6) const sum = () => {...}');
+  } else {
+    console.log('| | ', '(1:6) const sum = () => {...}');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(6:6) const add = (a, b) => {...}');
+  } else {
+    console.log('| | ', '(6:6) const add = (a, b) => {...}');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Script');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('(1:6) const sum = (xs) => {...}');
+  }
 
   return xs.reduce((acc, x) => acc + x, 0);
 };
 
 const add = (a, b) => {
   console.log('Adding stuff up');
-  console.groupCollapsed('(6:6) const add = (a, b) => {...}');
-  console.groupCollapsed('Parameters');
-  console.log('(6:13)', 'a:', a);
-  console.log('(6:16)', 'b:', b);
-  console.groupEnd('Parameters');
-  console.groupCollapsed('Variables');
-  console.groupEnd('Variables');
-  console.groupCollapsed('Return');
-  console.log('(8:9)', a + b);
-  console.groupEnd('Return');
-  console.groupCollapsed('Script');
-  console.log('(1:6) const sum = () => {...}');
-  console.log('(6:6) const add = (a, b) => {...}');
-  console.groupEnd('Script');
-  console.groupEnd('(6:6) const add = (a, b) => {...}');
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('(6:6) const add = (a, b) => {...}');
+  } else {
+    console.log('▼ ', '(6:6) const add = (a, b) => {...}');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Parameters');
+  } else {
+    console.log('| ▼ ', 'Parameters');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(6:13)', 'a:', a);
+  } else {
+    console.log('| | ', '(6:13)', 'a:', a);
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(6:16)', 'b:', b);
+  } else {
+    console.log('| | ', '(6:16)', 'b:', b);
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Parameters');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Variables');
+  } else {
+    console.log('| ▼ ', 'Variables');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Variables');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Return');
+  } else {
+    console.log('| ▼ ', 'Return');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(8:9)', a + b);
+  } else {
+    console.log('| | ', '(8:9)', a + b);
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Return');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Script');
+  } else {
+    console.log('| ▼ ', 'Script');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(1:6) const sum = () => {...}');
+  } else {
+    console.log('| | ', '(1:6) const sum = () => {...}');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(6:6) const add = (a, b) => {...}');
+  } else {
+    console.log('| | ', '(6:6) const add = (a, b) => {...}');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Script');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('(6:6) const add = (a, b) => {...}');
+  }
 
   return a + b;
 };
@@ -565,19 +1580,74 @@ const getApi = async (url) => {
 
 const getApi = async url => {
   console.log('Requesting some data');
-  console.groupCollapsed('(1:6) const getApi = (url) => {...}');
-  console.groupCollapsed('Parameters');
-  console.log('(1:22)', 'url:', url);
-  console.groupEnd('Parameters');
-  console.groupCollapsed('Variables');
-  console.groupEnd('Variables');
-  console.groupCollapsed('Return');
-  console.log('(3:9)', (await fetch(url)));
-  console.groupEnd('Return');
-  console.groupCollapsed('Script');
-  console.log('(1:6) const getApi = (url) => {...}');
-  console.groupEnd('Script');
-  console.groupEnd('(1:6) const getApi = (url) => {...}');
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('(1:6) const getApi = (url) => {...}');
+  } else {
+    console.log('▼ ', '(1:6) const getApi = (url) => {...}');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Parameters');
+  } else {
+    console.log('| ▼ ', 'Parameters');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(1:22)', 'url:', url);
+  } else {
+    console.log('| | ', '(1:22)', 'url:', url);
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Parameters');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Variables');
+  } else {
+    console.log('| ▼ ', 'Variables');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Variables');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Return');
+  } else {
+    console.log('| ▼ ', 'Return');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(3:9)', (await fetch(url)));
+  } else {
+    console.log('| | ', '(3:9)', (await fetch(url)));
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Return');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Script');
+  } else {
+    console.log('| ▼ ', 'Script');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(1:6) const getApi = (url) => {...}');
+  } else {
+    console.log('| | ', '(1:6) const getApi = (url) => {...}');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Script');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('(1:6) const getApi = (url) => {...}');
+  }
 
   return await fetch(url);
 };
@@ -599,20 +1669,80 @@ import x from 'x';
 
 const add = (a, b) => {
   console.log('Adding stuff up');
-  console.groupCollapsed('(3:6) const add = (a, b) => {...}');
-  console.groupCollapsed('Parameters');
-  console.log('(3:13)', 'a:', a);
-  console.log('(3:16)', 'b:', b);
-  console.groupEnd('Parameters');
-  console.groupCollapsed('Variables');
-  console.groupEnd('Variables');
-  console.groupCollapsed('Return');
-  console.log('(5:9)', a + b);
-  console.groupEnd('Return');
-  console.groupCollapsed('Script');
-  console.log('(3:6) const add = (a, b) => {...}');
-  console.groupEnd('Script');
-  console.groupEnd('(3:6) const add = (a, b) => {...}');
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('(3:6) const add = (a, b) => {...}');
+  } else {
+    console.log('▼ ', '(3:6) const add = (a, b) => {...}');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Parameters');
+  } else {
+    console.log('| ▼ ', 'Parameters');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(3:13)', 'a:', a);
+  } else {
+    console.log('| | ', '(3:13)', 'a:', a);
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(3:16)', 'b:', b);
+  } else {
+    console.log('| | ', '(3:16)', 'b:', b);
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Parameters');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Variables');
+  } else {
+    console.log('| ▼ ', 'Variables');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Variables');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Return');
+  } else {
+    console.log('| ▼ ', 'Return');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(5:9)', a + b);
+  } else {
+    console.log('| | ', '(5:9)', a + b);
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Return');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Script');
+  } else {
+    console.log('| ▼ ', 'Script');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(3:6) const add = (a, b) => {...}');
+  } else {
+    console.log('| | ', '(3:6) const add = (a, b) => {...}');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Script');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('(3:6) const add = (a, b) => {...}');
+  }
 
   return a + b;
 };
@@ -634,20 +1764,80 @@ const x = require('x');
 
 const add = (a, b) => {
   console.log('Adding stuff up');
-  console.groupCollapsed('(3:6) const add = (a, b) => {...}');
-  console.groupCollapsed('Parameters');
-  console.log('(3:13)', 'a:', a);
-  console.log('(3:16)', 'b:', b);
-  console.groupEnd('Parameters');
-  console.groupCollapsed('Variables');
-  console.groupEnd('Variables');
-  console.groupCollapsed('Return');
-  console.log('(5:9)', a + b);
-  console.groupEnd('Return');
-  console.groupCollapsed('Script');
-  console.log('(3:6) const add = (a, b) => {...}');
-  console.groupEnd('Script');
-  console.groupEnd('(3:6) const add = (a, b) => {...}');
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('(3:6) const add = (a, b) => {...}');
+  } else {
+    console.log('▼ ', '(3:6) const add = (a, b) => {...}');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Parameters');
+  } else {
+    console.log('| ▼ ', 'Parameters');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(3:13)', 'a:', a);
+  } else {
+    console.log('| | ', '(3:13)', 'a:', a);
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(3:16)', 'b:', b);
+  } else {
+    console.log('| | ', '(3:16)', 'b:', b);
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Parameters');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Variables');
+  } else {
+    console.log('| ▼ ', 'Variables');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Variables');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Return');
+  } else {
+    console.log('| ▼ ', 'Return');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(5:9)', a + b);
+  } else {
+    console.log('| | ', '(5:9)', a + b);
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Return');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupCollapsed('Script');
+  } else {
+    console.log('| ▼ ', 'Script');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.log('(3:6) const add = (a, b) => {...}');
+  } else {
+    console.log('| | ', '(3:6) const add = (a, b) => {...}');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('Script');
+  }
+
+  if (typeof window !== 'undefined') {
+    console.groupEnd('(3:6) const add = (a, b) => {...}');
+  }
 
   return a + b;
 };

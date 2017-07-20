@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Templates .buildGroupCollapsed calls template with correct string and indentation level: 0 1`] = `
+"
+    if (typeof window !== 'undefined') {
+      console.groupCollapsed(title);
+    } else {
+      console.log('▼ ', title);
+    }
+  "
+`;
+
+exports[`Templates .buildGroupCollapsed calls template with correct string and indentation level: 1 1`] = `
+"
+    if (typeof window !== 'undefined') {
+      console.groupCollapsed(title);
+    } else {
+      console.log('| ▼ ', title);
+    }
+  "
+`;
+
+exports[`Templates .buildGroupCollapsed calls template with correct string and indentation level: 2 1`] = `
+"
+    if (typeof window !== 'undefined') {
+      console.groupCollapsed(title);
+    } else {
+      console.log('| | ▼ ', title);
+    }
+  "
+`;
+
+exports[`Templates .buildGroupCollapsed calls template with correct string and indentation level: 3 1`] = `
+"
+    if (typeof window !== 'undefined') {
+      console.groupCollapsed(title);
+    } else {
+      console.log('| | | ▼ ', title);
+    }
+  "
+`;
+
+exports[`Templates .buildGroupEnd calls template with correct string 1`] = `
+"
+  if (typeof window !== 'undefined') {
+    console.groupEnd(title);
+  }
+"
+`;
+
+exports[`Templates .buildLog calls template with correct string and indentation level: 1 1`] = `
+"
+    if (typeof window !== 'undefined') {
+      console.log(args);
+    } else {
+      console.log('| | ', args);
+
+    }
+  "
+`;
+
+exports[`Templates .buildLog calls template with correct string and indentation level: 2 1`] = `
+"
+    if (typeof window !== 'undefined') {
+      console.log(args);
+    } else {
+      console.log('| | | ', args);
+
+    }
+  "
+`;
+
+exports[`Templates .buildLog calls template with correct string and indentation level: 3 1`] = `
+"
+    if (typeof window !== 'undefined') {
+      console.log(args);
+    } else {
+      console.log('| | | | ', args);
+
+    }
+  "
+`;
