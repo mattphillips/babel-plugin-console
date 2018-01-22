@@ -1,5 +1,5 @@
 import pluginTester from 'babel-plugin-tester';
-import plugin from 'babel-macros';
+import plugin from 'babel-plugin-macros';
 
 pluginTester({
   plugin,

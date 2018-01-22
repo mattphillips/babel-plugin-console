@@ -30,7 +30,8 @@
     "plugin",
     "babel-plugin",
     "console",
-    "scope"
+    "scope",
+    "babel-plugin-macros"
   ],
   "author": "Matt Phillips <matt@mattphillips> (http://mattphillips.io)",
   "license": "MIT",
@@ -43,7 +44,6 @@
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.2.1",
     "babel-jest": "^22.1.0",
-    "babel-macros": "^0.5.2",
     "babel-plugin-tester": "^5.0.0",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
@@ -81,5 +81,8 @@
       "yarn prettier",
       "git add"
     ]
+  },
+  "dependencies": {
+    "babel-plugin-macros": "^2.0.0"
   }
 }
