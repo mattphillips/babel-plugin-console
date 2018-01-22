@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`1. macros 1`] = `
+exports[`macros 1. macros: 1. macros 1`] = `
 "
 import scope from './scope.macro'
 const c = 10;
@@ -12,7 +12,7 @@ const c = 10;
 "
 `;
 
-exports[`2. macros 1`] = `
+exports[`macros 2. macros: 2. macros 1`] = `
 "
 import scope from './scope.macro'
 function add(a, b) {
@@ -31,7 +31,7 @@ function add(a, b) {
 "
 `;
 
-exports[`3. macros 1`] = `
+exports[`macros 3. macros: 3. macros 1`] = `
 "
 import scope from './scope.macro'
 const add = function (a, b) {
@@ -50,7 +50,7 @@ const add = function (a, b) {
 "
 `;
 
-exports[`4. macros 1`] = `
+exports[`macros 4. macros: 4. macros 1`] = `
 "
 import scope from './scope.macro'
 const add = (a, b) => {
@@ -69,7 +69,7 @@ const add = (a, b) => {
 "
 `;
 
-exports[`5. macros 1`] = `
+exports[`macros 5. macros: 5. macros 1`] = `
 "
 import scope from './scope.macro'
 const add = a => b => {
@@ -88,7 +88,7 @@ const add = a => b => {
 "
 `;
 
-exports[`6. macros 1`] = `
+exports[`macros 6. macros: 6. macros 1`] = `
 "
 import scope from './scope.macro'
 function add(a, b) {
@@ -188,7 +188,7 @@ function add(a, b) {
 "
 `;
 
-exports[`7. macros 1`] = `
+exports[`macros 7. macros: 7. macros 1`] = `
 "
 import scope from './scope.macro';
 const add = function(a, b) {
@@ -288,7 +288,7 @@ const add = function (a, b) {
 "
 `;
 
-exports[`8. macros 1`] = `
+exports[`macros 8. macros: 8. macros 1`] = `
 "
 import scope from './scope.macro';
 let add = function(a, b) {
@@ -388,7 +388,7 @@ let add = function (a, b) {
 "
 `;
 
-exports[`9. macros 1`] = `
+exports[`macros 9. macros: 9. macros 1`] = `
 "
 import scope from './scope.macro';
 const add = (a, b) => {
@@ -488,7 +488,7 @@ const add = (a, b) => {
 "
 `;
 
-exports[`10. macros 1`] = `
+exports[`macros 10. macros: 10. macros 1`] = `
 "
 import scope from './scope.macro';
 let add = (a, b) => {
@@ -588,7 +588,7 @@ let add = (a, b) => {
 "
 `;
 
-exports[`11. macros 1`] = `
+exports[`macros 11. macros: 11. macros 1`] = `
 "
 import scope from './scope.macro';
 const add = (a) => (b) => {
@@ -688,7 +688,7 @@ const add = a => b => {
 "
 `;
 
-exports[`12. macros 1`] = `
+exports[`macros 12. macros: 12. macros 1`] = `
 "
 import scope from './scope.macro';
 function add(a) {
@@ -792,7 +792,7 @@ function add(a) {
 "
 `;
 
-exports[`13. macros 1`] = `
+exports[`macros 13. macros: 13. macros 1`] = `
 "
 import scope from './scope.macro';
 const add = function (a) {
@@ -896,7 +896,7 @@ const add = function (a) {
 "
 `;
 
-exports[`14. macros 1`] = `
+exports[`macros 14. macros: 14. macros 1`] = `
 "
 import scope from './scope.macro';
 const add = function (a) {
@@ -1010,7 +1010,7 @@ const add = function (a) {
 "
 `;
 
-exports[`15. macros 1`] = `
+exports[`macros 15. macros: 15. macros 1`] = `
 "
 import scope from './scope.macro';
 const add = function (a, b) {
@@ -1102,7 +1102,7 @@ const add = function (a, b) {
 "
 `;
 
-exports[`16. macros 1`] = `
+exports[`macros 16. macros: 16. macros 1`] = `
 "
 import scope from './scope.macro';
 const hello = 'hello';
@@ -1214,7 +1214,7 @@ function add(a, b) {
 "
 `;
 
-exports[`17. macros 1`] = `
+exports[`macros 17. macros: 17. macros 1`] = `
 "
 import scope from './scope.macro';
 export default function(state = 0, action) {
@@ -1300,7 +1300,7 @@ export default function (state = 0, action) {
 "
 `;
 
-exports[`18. macros 1`] = `
+exports[`macros 18. macros: 18. macros 1`] = `
 "
 import scope from './scope.macro';
 export default addOne => (state = 0, action) => {
@@ -1392,7 +1392,7 @@ export default (addOne => (state = 0, action) => {
 "
 `;
 
-exports[`19. macros 1`] = `
+exports[`macros 19. macros: 19. macros 1`] = `
 "
 import scope from './scope.macro';
 const sum = (...xs) => {
@@ -1478,7 +1478,7 @@ const sum = (...xs) => {
 "
 `;
 
-exports[`20. macros 1`] = `
+exports[`macros 20. macros: 20. macros 1`] = `
 "
 import scope from './scope.macro';
 const sum = (...xs) => {
@@ -1661,7 +1661,7 @@ const add = (a, b) => {
 "
 `;
 
-exports[`21. macros 1`] = `
+exports[`macros 21. macros: 21. macros 1`] = `
 "
 import scope from './scope.macro';
 const getApi = async (url) => {
@@ -1747,7 +1747,7 @@ const getApi = async url => {
 "
 `;
 
-exports[`25. macros 1`] = `
+exports[`macros 25. macros: 25. macros 1`] = `
 "
 import scope from './scope.macro';
 
@@ -1840,7 +1840,7 @@ const add = (a, b) => {
 "
 `;
 
-exports[`26. macros 1`] = `
+exports[`macros 26. macros: 26. macros 1`] = `
 "
 const scope = require('./scope.macro');
 
