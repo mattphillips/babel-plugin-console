@@ -150,6 +150,9 @@ const add = (a, b) => {
 };
 ```
 
+> NOTE: There's also a separate package available called [`scope.macro`](https://github.com/kentcdodds/scope.macro)
+> which you can install and use instead if you prefer to type less.
+
 ## Inspiration
 
 [This tweet](https://twitter.com/kentcdodds/status/885604009930768384) led to me watching
