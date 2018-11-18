@@ -3,9 +3,9 @@
 exports[`Templates .buildGroupCollapsed calls template with correct string and indentation level: 0 1`] = `
 "
     if (typeof window !== 'undefined') {
-      console.groupCollapsed(title);
+      console.groupCollapsed(TITLE);
     } else {
-      console.log('▼ ', title);
+      console.log('▼ ', TITLE);
     }
   "
 `;
@@ -13,9 +13,9 @@ exports[`Templates .buildGroupCollapsed calls template with correct string and i
 exports[`Templates .buildGroupCollapsed calls template with correct string and indentation level: 1 1`] = `
 "
     if (typeof window !== 'undefined') {
-      console.groupCollapsed(title);
+      console.groupCollapsed(TITLE);
     } else {
-      console.log('| ▼ ', title);
+      console.log('| ▼ ', TITLE);
     }
   "
 `;
@@ -23,9 +23,9 @@ exports[`Templates .buildGroupCollapsed calls template with correct string and i
 exports[`Templates .buildGroupCollapsed calls template with correct string and indentation level: 2 1`] = `
 "
     if (typeof window !== 'undefined') {
-      console.groupCollapsed(title);
+      console.groupCollapsed(TITLE);
     } else {
-      console.log('| | ▼ ', title);
+      console.log('| | ▼ ', TITLE);
     }
   "
 `;
@@ -33,9 +33,9 @@ exports[`Templates .buildGroupCollapsed calls template with correct string and i
 exports[`Templates .buildGroupCollapsed calls template with correct string and indentation level: 3 1`] = `
 "
     if (typeof window !== 'undefined') {
-      console.groupCollapsed(title);
+      console.groupCollapsed(TITLE);
     } else {
-      console.log('| | | ▼ ', title);
+      console.log('| | | ▼ ', TITLE);
     }
   "
 `;
@@ -43,7 +43,7 @@ exports[`Templates .buildGroupCollapsed calls template with correct string and i
 exports[`Templates .buildGroupEnd calls template with correct string 1`] = `
 "
   if (typeof window !== 'undefined') {
-    console.groupEnd(title);
+    console.groupEnd(TITLE);
   }
 "
 `;
@@ -51,9 +51,9 @@ exports[`Templates .buildGroupEnd calls template with correct string 1`] = `
 exports[`Templates .buildLog calls template with correct string and indentation level: 1 1`] = `
 "
     if (typeof window !== 'undefined') {
-      console.log(args);
+      console.log(ARGS);
     } else {
-      console.log('| | ', args);
+      console.log('| | ', ARGS);
 
     }
   "
@@ -62,9 +62,9 @@ exports[`Templates .buildLog calls template with correct string and indentation 
 exports[`Templates .buildLog calls template with correct string and indentation level: 2 1`] = `
 "
     if (typeof window !== 'undefined') {
-      console.log(args);
+      console.log(ARGS);
     } else {
-      console.log('| | | ', args);
+      console.log('| | | ', ARGS);
 
     }
   "
@@ -73,9 +73,9 @@ exports[`Templates .buildLog calls template with correct string and indentation 
 exports[`Templates .buildLog calls template with correct string and indentation level: 3 1`] = `
 "
     if (typeof window !== 'undefined') {
-      console.log(args);
+      console.log(ARGS);
     } else {
-      console.log('| | | | ', args);
+      console.log('| | | | ', ARGS);
 
     }
   "
