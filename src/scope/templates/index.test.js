@@ -18,7 +18,7 @@ describe('Templates', () => {
       const templateCurry = jest.fn();
       const { buildGroupCollapsed } = templateHelpers(template);
       buildGroupCollapsed('matt')(0);
-      expect(templateCurry).toHaveBeenCalledWith({ title: 'matt' });
+      expect(templateCurry).toHaveBeenCalledWith({ TITLE: 'matt' });
     });
 
     it('returns value from invoking template', () => {
@@ -41,7 +41,7 @@ describe('Templates', () => {
       const templateCurry = jest.fn();
       const { buildGroupEnd } = templateHelpers(template);
       buildGroupEnd('matt');
-      expect(templateCurry).toHaveBeenCalledWith({ title: 'matt' });
+      expect(templateCurry).toHaveBeenCalledWith({ TITLE: 'matt' });
     });
 
     it('returns value from invoking template', () => {
@@ -56,7 +56,7 @@ describe('Templates', () => {
       const template = jest.fn(() => noop);
       const { buildLog } = templateHelpers(template);
       buildLog('bob', 'woz', 'ere')(0);
-      expect(template).toHaveBeenCalledWith('console.log(args);');
+      expect(template).toHaveBeenCalledWith('console.log(ARGS);');
     });
 
     each([[1], [2], [3]]).it('calls template with correct string and indentation level: %d', level => {
@@ -71,7 +71,7 @@ describe('Templates', () => {
       const templateCurry = jest.fn();
       const { buildLog } = templateHelpers(template);
       buildLog('matt', 'woz', 'ere')(0);
-      expect(templateCurry).toHaveBeenCalledWith({ args: ['matt', 'woz', 'ere'] });
+      expect(templateCurry).toHaveBeenCalledWith({ ARGS: ['matt', 'woz', 'ere'] });
     });
 
     it('returns value from invoking template', () => {

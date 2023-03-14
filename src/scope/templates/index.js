@@ -1,36 +1,36 @@
-const buildGroupCollapsed = template => title => level => {
+const buildGroupCollapsed = template => TITLE => level => {
   const indentation = indentWith(level, '| ', '▼ ');
 
   return template(`
     if (typeof window !== 'undefined') {
-      console.groupCollapsed(title);
+      console.groupCollapsed(TITLE);
     } else {
-      console.log('${indentation}', title);
+      console.log('${indentation}', TITLE);
     }
-  `)({ title });
+  `)({ TITLE });
 };
 
-const buildGroupEnd = template => title =>
+const buildGroupEnd = template => TITLE =>
   template(`
   if (typeof window !== 'undefined') {
-    console.groupEnd(title);
+    console.groupEnd(TITLE);
   }
-`)({ title });
+`)({ TITLE });
 
-const buildLog = template => (...args) => level => {
+const buildLog = template => (...ARGS) => level => {
   if (level == 0) {
-    return template('console.log(args);')({ args });
+    return template('console.log(ARGS);')({ ARGS });
   }
 
   const indentation = indentWith(level, '| ', '| ');
   return template(`
     if (typeof window !== 'undefined') {
-      console.log(args);
+      console.log(ARGS);
     } else {
-      console.log('${indentation}', args);
+      console.log('${indentation}', ARGS);
 
     }
-  `)({ args });
+  `)({ ARGS });
 };
 
 const indentWith = (level, str, initial) => Array.from({ length: level }).reduce(acc => `${str}${acc}`, initial);
